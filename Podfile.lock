@@ -1,0 +1,107 @@
+PODS:
+  - BigInt (3.1.0):
+    - SipHash (~> 1.2)
+  - CKMnemonic (0.1.7):
+    - CryptoSwift
+  - CryptoSwift (0.15.0)
+  - PromiseKit (6.8.3):
+    - PromiseKit/CorePromise (= 6.8.3)
+    - PromiseKit/Foundation (= 6.8.3)
+    - PromiseKit/UIKit (= 6.8.3)
+  - PromiseKit/CorePromise (6.8.3)
+  - PromiseKit/Foundation (6.8.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.8.3):
+    - PromiseKit/CorePromise
+  - secp256k1.swift (0.1.4)
+  - SerializableValue (0.0.1)
+  - SipHash (1.2.2)
+  - SQLite.swift (0.11.5):
+    - SQLite.swift/standard (= 0.11.5)
+  - SQLite.swift/standard (0.11.5)
+  - SQLiteMigrationManager.swift (0.5.0):
+    - SQLite.swift (~> 0.11.0)
+  - TesseractEthereumBase (0.0.1):
+    - BigInt (~> 3.1)
+    - CryptoSwift (~> 0.15)
+    - SerializableValue (~> 0.0.1)
+  - TesseractKeychain (0.0.1):
+    - BigInt (~> 3.1)
+    - CKMnemonic (~> 0.1)
+    - CryptoSwift (~> 0.15)
+    - secp256k1.swift (~> 0.1)
+  - TesseractWallet (0.0.1):
+    - TesseractWallet/Core (= 0.0.1)
+  - TesseractWallet/Core (0.0.1):
+    - SerializableValue (~> 0.0.1)
+    - SQLite.swift (~> 0.11.0)
+    - SQLiteMigrationManager.swift (~> 0.5.0)
+    - TesseractKeychain (~> 0.0.1)
+  - TesseractWallet/Ethereum (0.0.1):
+    - TesseractEthereumBase (~> 0.0.1)
+    - TesseractWallet/Core
+
+DEPENDENCIES:
+  - PromiseKit (~> 6.8.0)
+  - SerializableValue (from `https://github.com/ypopovych/swift-serializable.git`, branch `master`)
+  - "TesseractEthereumBase (from `git@github.com:ypopovych/swift-ethereum-base.git`, branch `master`)"
+  - "TesseractKeychain (from `git@github.com:ypopovych/swift-keychain.git`, branch `master`)"
+  - "TesseractWallet (from `git@github.com:ypopovych/swift-wallet-sdk.git`, branch `master`)"
+  - "TesseractWallet/Ethereum (from `git@github.com:ypopovych/swift-wallet-sdk.git`, branch `master`)"
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - BigInt
+    - CKMnemonic
+    - CryptoSwift
+    - PromiseKit
+    - secp256k1.swift
+    - SipHash
+    - SQLite.swift
+    - SQLiteMigrationManager.swift
+
+EXTERNAL SOURCES:
+  SerializableValue:
+    :branch: master
+    :git: https://github.com/ypopovych/swift-serializable.git
+  TesseractEthereumBase:
+    :branch: master
+    :git: "git@github.com:ypopovych/swift-ethereum-base.git"
+  TesseractKeychain:
+    :branch: master
+    :git: "git@github.com:ypopovych/swift-keychain.git"
+  TesseractWallet:
+    :branch: master
+    :git: "git@github.com:ypopovych/swift-wallet-sdk.git"
+
+CHECKOUT OPTIONS:
+  SerializableValue:
+    :commit: 10f23664e16c600002178cece070722c09e7b7c1
+    :git: https://github.com/ypopovych/swift-serializable.git
+  TesseractEthereumBase:
+    :commit: 4bea43b031bf860cfbcf42187cce99c770f75aa5
+    :git: "git@github.com:ypopovych/swift-ethereum-base.git"
+  TesseractKeychain:
+    :commit: d16bb54c8a546c2dc9bfac4b75e5ba91a00459be
+    :git: "git@github.com:ypopovych/swift-keychain.git"
+  TesseractWallet:
+    :commit: d33ef3e88c9a062f1b690ac79c42b758decdc87f
+    :git: "git@github.com:ypopovych/swift-wallet-sdk.git"
+
+SPEC CHECKSUMS:
+  BigInt: 76b5dfdfa3e2e478d4ffdf161aeede5502e2742f
+  CKMnemonic: 88e745afffea6f3c719c799d9869a2ea5eb9f08b
+  CryptoSwift: 769f58a9e89f64e8796c2e59ce5f002dc81a2438
+  PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
+  secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
+  SerializableValue: 68b0bc3f578c45f99279bc0297213a57ec532663
+  SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
+  SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
+  SQLiteMigrationManager.swift: 646cfccb9a446b3134d19dca7a5ec5437f82da76
+  TesseractEthereumBase: 46b03bf12a8381fa17849a49ab46b1a134c940fa
+  TesseractKeychain: 76854541e4da0759163a6b5f201fe8287911491e
+  TesseractWallet: ee5ac97c9083e0d9c6edb447d8abe70d8ceea3c3
+
+PODFILE CHECKSUM: f4f3095b110f18cd8d6466d0c82ae2e7f2dbc670
+
+COCOAPODS: 1.6.1
