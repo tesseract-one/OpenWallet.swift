@@ -19,9 +19,10 @@
 //
 
 import Foundation
-import EthereumBase
 import Serializable
 import BigInt
+
+@_exported import EthereumBase
 
 
 public protocol EthereumRequestMessageProtocol: KeychainRequestMessageProtocol {
