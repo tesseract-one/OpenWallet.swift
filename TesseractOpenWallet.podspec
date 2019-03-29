@@ -58,8 +58,8 @@ iOS Swift SDK for Open Wallet protocol
   s.subspec 'PromiseKit' do |ss|
     ss.source_files = 'Sources/PromiseKit/**/*.swift'
 
-    ss.dependency 'TesseractWallet/Core'
-    ss.dependency 'PromiseKit', '~> 6.8.0'
+    ss.dependency 'TesseractOpenWallet/Core'
+    ss.dependency 'PromiseKit/CorePromise', '~> 6.8.0'
   end
 
   s.default_subspecs = 'Core', 'Client'
