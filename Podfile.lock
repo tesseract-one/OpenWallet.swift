@@ -79,13 +79,13 @@ CHECKOUT OPTIONS:
     :commit: 10f23664e16c600002178cece070722c09e7b7c1
     :git: https://github.com/ypopovych/swift-serializable.git
   TesseractEthereumBase:
-    :commit: 4bea43b031bf860cfbcf42187cce99c770f75aa5
+    :commit: 93f107649fb43f9ca34aa318df58fec593a6e8fa
     :git: "git@github.com:ypopovych/swift-ethereum-base.git"
   TesseractKeychain:
     :commit: d16bb54c8a546c2dc9bfac4b75e5ba91a00459be
     :git: "git@github.com:ypopovych/swift-keychain.git"
   TesseractWallet:
-    :commit: d33ef3e88c9a062f1b690ac79c42b758decdc87f
+    :commit: e24c2bd3d60cfff8c4b0a1bba980fb2d7710f766
     :git: "git@github.com:ypopovych/swift-wallet-sdk.git"
 
 SPEC CHECKSUMS:
