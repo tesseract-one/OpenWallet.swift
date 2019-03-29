@@ -23,7 +23,6 @@
 		927C5A77224D50C900F2AA50 /* EthereumSignProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5A76224D50C900F2AA50 /* EthereumSignProvider.swift */; };
 		927C5A7D224D625C00F2AA50 /* EthereumKeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5A7C224D625C00F2AA50 /* EthereumKeychainError.swift */; };
 		927C5A7F224D651F00F2AA50 /* EthereumNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5A7E224D651F00F2AA50 /* EthereumNetwork.swift */; };
-		927C5A81224D7E8C00F2AA50 /* Network+Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5A80224D7E8C00F2AA50 /* Network+Wallet.swift */; };
 		927C5A84224D80B100F2AA50 /* KeychainAPI+PromiseKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5A83224D80B100F2AA50 /* KeychainAPI+PromiseKit.swift */; };
 		927C5A86224D817200F2AA50 /* TesseractOpenWallet.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 927C5A85224D817200F2AA50 /* TesseractOpenWallet.podspec */; };
 		C0A15632F86E0901AC79BC31 /* Pods_OpenWalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97DF7F815DFAD7216B0F1606 /* Pods_OpenWalletTests.framework */; };
@@ -62,7 +61,6 @@
 		927C5A76224D50C900F2AA50 /* EthereumSignProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumSignProvider.swift; sourceTree = "<group>"; };
 		927C5A7C224D625C00F2AA50 /* EthereumKeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumKeychainError.swift; sourceTree = "<group>"; };
 		927C5A7E224D651F00F2AA50 /* EthereumNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumNetwork.swift; sourceTree = "<group>"; };
-		927C5A80224D7E8C00F2AA50 /* Network+Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network+Wallet.swift"; sourceTree = "<group>"; };
 		927C5A83224D80B100F2AA50 /* KeychainAPI+PromiseKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeychainAPI+PromiseKit.swift"; sourceTree = "<group>"; };
 		927C5A85224D817200F2AA50 /* TesseractOpenWallet.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TesseractOpenWallet.podspec; sourceTree = "<group>"; };
 		97DF7F815DFAD7216B0F1606 /* Pods_OpenWalletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenWalletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				927C5A5E224D4A8D00F2AA50 /* ExtensionViewController.swift */,
-				927C5A80224D7E8C00F2AA50 /* Network+Wallet.swift */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -353,34 +350,22 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-OpenWalletTests/Pods-OpenWalletTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
-				"${BUILT_PRODUCTS_DIR}/CKMnemonic/CKMnemonic.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
-				"${BUILT_PRODUCTS_DIR}/SQLiteMigrationManager.swift/SQLiteMigrationManager.framework",
 				"${BUILT_PRODUCTS_DIR}/SerializableValue/Serializable.framework",
 				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
 				"${BUILT_PRODUCTS_DIR}/TesseractEthereumBase/EthereumBase.framework",
-				"${BUILT_PRODUCTS_DIR}/TesseractKeychain/Keychain.framework",
-				"${BUILT_PRODUCTS_DIR}/TesseractWallet/Wallet.framework",
-				"${BUILT_PRODUCTS_DIR}/secp256k1.swift/secp256k1.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CKMnemonic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLiteMigrationManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Serializable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EthereumBase.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keychain.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Wallet.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -446,7 +431,6 @@
 				927C5A7D224D625C00F2AA50 /* EthereumKeychainError.swift in Sources */,
 				927C5A60224D4A8D00F2AA50 /* OpenWallet.swift in Sources */,
 				927C5A61224D4A8D00F2AA50 /* Request.swift in Sources */,
-				927C5A81224D7E8C00F2AA50 /* Network+Wallet.swift in Sources */,
 				927C5A6D224D4CCE00F2AA50 /* EthereumKeychainMessages.swift in Sources */,
 				927C5A5F224D4A8D00F2AA50 /* KeychainAPI.swift in Sources */,
 				927C5A6F224D4D2C00F2AA50 /* Request+Client.swift in Sources */,
