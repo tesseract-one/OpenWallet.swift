@@ -39,7 +39,7 @@ public class KeychainRequest<Message: KeychainRequestMessageProtocol>: Request<M
 extension OpenWallet {
     public func keychain<R: KeychainRequestMessageProtocol>(
         net: Network, request: R,
-        response: @escaping (Result<R.Response, OpenWalletError>) -> Void
+        response: @escaping (Swift.Result<R.Response, OpenWalletError>) -> Void
     ) {
         let req = KeychainRequest(network: net, id: requestId, request: request)
         self.request(req, response: response)

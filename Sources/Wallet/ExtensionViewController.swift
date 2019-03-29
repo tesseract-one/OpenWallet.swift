@@ -23,7 +23,7 @@ import UIKit
 public protocol RequestHandler {
     var supportedUTI: Array<String> { get }
     
-    typealias Completion = (Result<ResponseProtocol, OpenWalletError>) -> Void
+    typealias Completion = (Swift.Result<ResponseProtocol, OpenWalletError>) -> Void
     
     func viewContoller(
         for request: String,

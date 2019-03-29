@@ -47,7 +47,7 @@ extension OpenWallet: SignProvider {
         response: @escaping OpenWallet.Response<Array<Address>>
     ) {
         keychain(net: .Ethereum, request: EthereumAccountKeychainRequest(networkId: networkId)) { result in
-            let res: Result<[Address], SignProviderError> = result
+            let res: Swift.Result<[Address], SignProviderError> = result
                 .mapError { SignProviderError(error: $0) }
                 .flatMap { account in
                     do {

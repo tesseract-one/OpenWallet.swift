@@ -23,7 +23,7 @@ import BigInt
 
 
 public protocol EthereumKeychainViewProvider {
-    typealias Response<Req: RequestMessageProtocol> = (Result<Req.Response, OpenWalletError>) -> Void
+    typealias Response<Req: RequestMessageProtocol> = (Swift.Result<Req.Response, OpenWalletError>) -> Void
     
     func accountRequestView(
         req: EthereumAccountKeychainRequest,

@@ -36,7 +36,7 @@ public class OpenWallet {
     
     public func request<R: RequestMessageProtocol>(
         _ request: Request<R>,
-        response: @escaping (Result<R.Response, OpenWalletError>) -> Void
+        response: @escaping (Swift.Result<R.Response, OpenWalletError>) -> Void
     ) {
         let vc = UIActivityViewController(
             activityItems: [request.activityItemSource],
@@ -111,7 +111,7 @@ extension OpenWallet {
     
     private static func response<R: RequestMessageProtocol>(
         req: Request<R>, items: [Any]?,
-        response: @escaping (Result<R.Response, OpenWalletError>) -> Void
+        response: @escaping (Swift.Result<R.Response, OpenWalletError>) -> Void
     ) {
         let attachments = items?.compactMap {$0 as? NSExtensionItem}.compactMap{$0.attachments}.flatMap{$0}
         guard let item = attachments?.first else {
@@ -142,11 +142,3 @@ extension OpenWallet {
         }
     }
 }
-
-//extension OpenWallet {
-//    public var distributedAPI: dAPI {
-//        let dapi = dAPI()
-//        dapi.signProvider = self
-//        return dapi
-//    }
-//}
