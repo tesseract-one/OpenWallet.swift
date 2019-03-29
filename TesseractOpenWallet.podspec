@@ -16,7 +16,7 @@ iOS Swift SDK for Open Wallet protocol
 
   s.ios.deployment_target = '10.0'
 
-  s.module_name = 'Wallet'
+  s.module_name = 'OpenWallet'
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'Sources/Core/**/*.swift'
@@ -45,15 +45,11 @@ iOS Swift SDK for Open Wallet protocol
   s.subspec 'Wallet' do |ss|
     ss.source_files = 'Sources/Wallet/**/*.swift'
 
-    ss.pod_target_xcconfig = { 'APPLICATION_EXTENSION_API_ONLY' => 'YES' }
-
     ss.dependency 'TesseractOpenWallet/Core'
   end
 
   s.subspec 'WalletEthereum' do |ss|
     ss.source_files = 'Sources/Ethereum/**/*.swift'
-
-    ss.pod_target_xcconfig = { 'APPLICATION_EXTENSION_API_ONLY' => 'YES' }
 
     ss.dependency 'TesseractOpenWallet/Wallet'
     ss.dependency 'TesseractOpenWallet/EthereumCore'
