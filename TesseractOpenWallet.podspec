@@ -28,6 +28,13 @@ iOS Swift SDK for Open Wallet protocol
     ss.dependency 'TesseractOpenWallet/Core'
   end
 
+  s.subspec 'PromiseKit' do |ss|
+    ss.source_files = 'Sources/PromiseKit/**/*.swift'
+
+    ss.dependency 'TesseractOpenWallet/Core'
+    ss.dependency 'PromiseKit/CorePromise', '~> 6.8.0'
+  end
+
   s.subspec 'EthereumCore' do |ss|
     ss.source_files = 'Sources/Ethereum/Core/**/*.swift'
 
@@ -42,6 +49,14 @@ iOS Swift SDK for Open Wallet protocol
     ss.dependency 'TesseractOpenWallet/EthereumCore'
   end
 
+  s.subspec 'EthereumPromiseKit' do |ss|
+    ss.source_files = 'Sources/Ethereum/Client/**/*.swift'
+
+    ss.dependency 'TesseractOpenWallet/Ethereum'
+    ss.dependency 'TesseractOpenWallet/PromiseKit'
+    ss.dependency 'TesseractEthereumBase/PromiseKit', '~> 0.0.1'
+  end
+
   s.subspec 'Wallet' do |ss|
     ss.source_files = 'Sources/Wallet/**/*.swift'
 
@@ -53,14 +68,6 @@ iOS Swift SDK for Open Wallet protocol
 
     ss.dependency 'TesseractOpenWallet/Wallet'
     ss.dependency 'TesseractOpenWallet/EthereumCore'
-  end
-
-  s.subspec 'PromiseKit' do |ss|
-    ss.source_files = 'Sources/PromiseKit/**/*.swift'
-
-    ss.dependency 'TesseractOpenWallet/Core'
-    ss.dependency 'TesseractEthereumBase/PromiseKit', '~> 0.0.1'
-    ss.dependency 'PromiseKit/CorePromise', '~> 6.8.0'
   end
 
   s.default_subspecs = 'Core', 'Client'
