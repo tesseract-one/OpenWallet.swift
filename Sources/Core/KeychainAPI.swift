@@ -24,24 +24,3 @@ public protocol KeychainRequestMessageProtocol: RequestMessageProtocol {
     static var method: String { get }
     var method: String { get }
 }
-
-public class KeychainRequest<Message: KeychainRequestMessageProtocol>: Request<Message> {
-    public init(network: Network, id: UInt32, request: Message) {
-        super.init(id: id, request: request, uti: "one.openwallet.keychain.\(network.uti)")
-    }
-    
-    required public init(json: String, uti: String) throws {
-        try super.init(json: json, uti: uti)
-    }
-}
-
-
-extension OpenWallet {
-    public func keychain<R: KeychainRequestMessageProtocol>(
-        net: Network, request: R,
-        response: @escaping (Swift.Result<R.Response, OpenWalletError>) -> Void
-    ) {
-        let req = KeychainRequest(network: net, id: requestId, request: request)
-        self.request(req, response: response)
-    }
-}
