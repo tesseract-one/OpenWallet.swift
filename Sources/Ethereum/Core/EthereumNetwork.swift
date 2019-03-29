@@ -19,8 +19,9 @@
 //
 
 import Foundation
+import EthereumBase
 
 
 public extension Network {
-    static let Ethereum = Network(id: 0x8000003c, uti: "ethereum")
+    static let Ethereum = Network(id: ETHEREUM_SLIP44_COIN_ID, uti: "ethereum")
 }
