@@ -23,26 +23,26 @@ import BigInt
 
 
 public protocol EthereumKeychainViewProvider {
-    typealias Response<Req: RequestMessageProtocol> = (Swift.Result<Req.Response, OpenWalletError>) -> Void
+    typealias ViewResponse<Req: RequestMessageProtocol> = (Swift.Result<Req.Response, OpenWalletError>) -> Void
     
     func accountRequestView(
         req: EthereumAccountKeychainRequest,
-        cb: @escaping Self.Response<EthereumAccountKeychainRequest>
+        cb: @escaping ViewResponse<EthereumAccountKeychainRequest>
     ) -> UIViewController
     
     func signTransactionView(
         req: EthereumSignTxKeychainRequest,
-        cb: @escaping Self.Response<EthereumSignTxKeychainRequest>
+        cb: @escaping ViewResponse<EthereumSignTxKeychainRequest>
     ) -> UIViewController
     
     func signDataView(
         req: EthereumSignDataKeychainRequest,
-        cb: @escaping Self.Response<EthereumSignDataKeychainRequest>
+        cb: @escaping ViewResponse<EthereumSignDataKeychainRequest>
     ) -> UIViewController
     
     func signTypedDataView(
         req: EthereumSignTypedDataKeychainRequest,
-        cb: @escaping Self.Response<EthereumSignTypedDataKeychainRequest>
+        cb: @escaping ViewResponse<EthereumSignTypedDataKeychainRequest>
     ) -> UIViewController
 }
 
