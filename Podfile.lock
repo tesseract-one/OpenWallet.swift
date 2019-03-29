@@ -43,7 +43,7 @@ CHECKOUT OPTIONS:
     :commit: 10f23664e16c600002178cece070722c09e7b7c1
     :git: https://github.com/ypopovych/swift-serializable.git
   TesseractEthereumBase:
-    :commit: 6d02a0852a604fc9ae133b314db9fffcddb84883
+    :commit: ae01eb74be4f4bf057b1cb0168ee91dce2ccb47a
     :git: "git@github.com:ypopovych/swift-ethereum-base.git"
 
 SPEC CHECKSUMS:
@@ -52,8 +52,8 @@ SPEC CHECKSUMS:
   PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
   SerializableValue: 68b0bc3f578c45f99279bc0297213a57ec532663
   SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
-  TesseractEthereumBase: 46b03bf12a8381fa17849a49ab46b1a134c940fa
+  TesseractEthereumBase: ad3ec9ec8560a464624a36e4fe99372d0ee8192b
 
-PODFILE CHECKSUM: 12ea617928f63f283127747e1364902da4177c35
+PODFILE CHECKSUM: afd5ac6a261972a931e5d43e8e30f7800424b987
 
 COCOAPODS: 1.6.1

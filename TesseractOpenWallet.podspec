@@ -49,7 +49,7 @@ iOS Swift SDK for Open Wallet protocol
   end
 
   s.subspec 'WalletEthereum' do |ss|
-    ss.source_files = 'Sources/Ethereum/**/*.swift'
+    ss.source_files = 'Sources/Ethereum/Wallet/**/*.swift'
 
     ss.dependency 'TesseractOpenWallet/Wallet'
     ss.dependency 'TesseractOpenWallet/EthereumCore'
