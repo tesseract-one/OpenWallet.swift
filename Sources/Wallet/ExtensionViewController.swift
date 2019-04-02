@@ -50,12 +50,19 @@ open class ExtensionViewController: UIViewController {
     
     private var emptyRequest: Request<Empty>!
     
-    open func walletNotInitializedController() -> UIViewController {
+    open func walletNotInitializedController() -> ExtensionWalletNotInitializedViewController {
         return ExtensionWalletNotInitializedViewController(nibName: nil, bundle: nil)
     }
     
     open func walletIsNotInitialized() {
-        showViewController(vc: walletNotInitializedController())
+        let vc = walletNotInitializedController()
+        vc.closeCb = { [weak self] in
+            if let sself = self {
+                sself.response(sself.emptyRequest.response(error: .cancelledByUser))
+            }
+            
+        }
+        showViewController(vc: vc)
     }
     
     override open func viewDidLoad() {
