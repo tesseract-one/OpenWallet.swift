@@ -26,6 +26,6 @@ open class ExtensionWalletNotInitializedViewController: UIViewController {
     @IBAction
     open func openWallet() {
         let url = URL(string: walletUrlScheme)!
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        self.extensionContext!.open(url, completionHandler: nil)
     }
 }
