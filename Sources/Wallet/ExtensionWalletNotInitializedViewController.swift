@@ -21,7 +21,10 @@
 import UIKit
 
 open class ExtensionWalletNotInitializedViewController: UIViewController {
-    open let walletUrlScheme: String = ""
+    
+    open var walletUrlScheme: String {
+        return ""
+    }
     
     @IBAction
     open func openWallet() {
