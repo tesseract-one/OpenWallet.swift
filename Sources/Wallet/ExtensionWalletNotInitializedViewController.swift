@@ -37,8 +37,6 @@ open class ExtensionWalletNotInitializedViewController: UIViewController {
             }
             responder = r.next
         }
-        
-        self.extensionContext!.open(url, completionHandler: nil)
     }
 }
 
