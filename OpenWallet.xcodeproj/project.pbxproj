@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F67120395EA2B6FF58DEB3B /* Pods_OpenWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4B3D8B2A37607B4ADB1585 /* Pods_OpenWallet.framework */; };
+		926C55532253CFBE00D14851 /* ExtensionWalletNotInitializedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926C55522253CFBE00D14851 /* ExtensionWalletNotInitializedViewController.swift */; };
 		927C5A49224D48D200F2AA50 /* OpenWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 927C5A3F224D48D200F2AA50 /* OpenWallet.framework */; };
 		927C5A4E224D48D200F2AA50 /* OpenWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5A4D224D48D200F2AA50 /* OpenWalletTests.swift */; };
 		927C5A5F224D4A8D00F2AA50 /* KeychainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5A5B224D4A8D00F2AA50 /* KeychainAPI.swift */; };
@@ -44,6 +45,7 @@
 		2C4B3D8B2A37607B4ADB1585 /* Pods_OpenWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AF309211E75A90895A5CCF2 /* Pods-OpenWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWallet.debug.xcconfig"; path = "Target Support Files/Pods-OpenWallet/Pods-OpenWallet.debug.xcconfig"; sourceTree = "<group>"; };
 		90B852193D727092685EEE2F /* Pods-OpenWalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWalletTests.release.xcconfig"; path = "Target Support Files/Pods-OpenWalletTests/Pods-OpenWalletTests.release.xcconfig"; sourceTree = "<group>"; };
+		926C55522253CFBE00D14851 /* ExtensionWalletNotInitializedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionWalletNotInitializedViewController.swift; sourceTree = "<group>"; };
 		927C5A3F224D48D200F2AA50 /* OpenWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		927C5A43224D48D200F2AA50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		927C5A48224D48D200F2AA50 /* OpenWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				927C5A5E224D4A8D00F2AA50 /* ExtensionViewController.swift */,
+				926C55522253CFBE00D14851 /* ExtensionWalletNotInitializedViewController.swift */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				927C5A60224D4A8D00F2AA50 /* OpenWallet.swift in Sources */,
 				927C5A61224D4A8D00F2AA50 /* Request.swift in Sources */,
 				927C5A6D224D4CCE00F2AA50 /* EthereumKeychainMessages.swift in Sources */,
+				926C55532253CFBE00D14851 /* ExtensionWalletNotInitializedViewController.swift in Sources */,
 				927C5A5F224D4A8D00F2AA50 /* KeychainAPI.swift in Sources */,
 				927C5A6F224D4D2C00F2AA50 /* Request+Client.swift in Sources */,
 				927C5A68224D4C2100F2AA50 /* Error.swift in Sources */,

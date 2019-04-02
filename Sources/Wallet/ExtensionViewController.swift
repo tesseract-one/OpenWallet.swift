@@ -50,6 +50,14 @@ open class ExtensionViewController: UIViewController {
     
     private var emptyRequest: Request<Empty>!
     
+    open func walletNotInitializedController() -> UIViewController {
+        return ExtensionWalletNotInitializedViewController(nibName: nil, bundle: nil)
+    }
+    
+    open func walletIsNotInitialized() {
+        showViewController(vc: walletNotInitializedController())
+    }
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
         let itemOpt = extensionContext!.inputItems
