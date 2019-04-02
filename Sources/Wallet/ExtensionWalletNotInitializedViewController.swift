@@ -26,24 +26,25 @@ open class ExtensionWalletNotInitializedViewController: UIViewController {
         return ""
     }
     
-    @objc func open(_ url: URL, options: [UIApplication.OpenExternalURLOptionsKey : Any] = [:], completionHandler completion: ((Bool) -> Void)? = nil) {
+    @objc func openURL(_ url: URL) -> Bool {
         var responder: UIResponder? = self.next
         while let r = responder {
             if r.responds(to: selector) {
                 r.perform(selector, with: url)
-                break
+                return true
             }
             responder = r.next
         }
+        return false
     }
     
     @IBAction
     open func openWallet() {
         let url = URL(string: walletUrlScheme)!
-        open(url, options: [:], completionHandler: nil)
+        let _ = openURL(url)
     }
     
-    let selector: Selector = #selector(open(_:options:completionHandler:))
+    let selector: Selector = #selector(openURL(_:))
 }
 
 private extension NSNull {
