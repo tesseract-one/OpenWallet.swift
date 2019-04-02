@@ -21,9 +21,7 @@
 import UIKit
 
 open class ExtensionWalletNotInitializedViewController: UIViewController {
-    open var walletUrlScheme: String = ""
-    let selector: Selector = #selector(NSNull.open(_:options:completionHandler:))
-    
+    open let walletUrlScheme: String = ""
     
     @IBAction
     open func openWallet() {
@@ -38,6 +36,8 @@ open class ExtensionWalletNotInitializedViewController: UIViewController {
             responder = r.next
         }
     }
+    
+    let selector: Selector = #selector(NSNull.open(_:options:completionHandler:))
 }
 
 private extension NSNull {
