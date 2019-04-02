@@ -22,10 +22,29 @@ import UIKit
 
 open class ExtensionWalletNotInitializedViewController: UIViewController {
     open var walletUrlScheme: String = ""
+    let selector: Selector = #selector(NSNull.open(_:options:completionHandler:))
+    
     
     @IBAction
     open func openWallet() {
         let url = URL(string: walletUrlScheme)!
+        
+        var responder: UIResponder? = self
+        while let r = responder {
+            if r.responds(to: selector) {
+                r.perform(selector, with: url)
+                break
+            }
+            responder = r.next
+        }
+        
         self.extensionContext!.open(url, completionHandler: nil)
     }
 }
+
+private extension NSNull {
+    @objc func open(_ url: URL, options: [UIApplication.OpenExternalURLOptionsKey : Any] = [:], completionHandler completion: ((Bool) -> Void)? = nil) {
+        // Workaround for compiler
+    }
+}
+
