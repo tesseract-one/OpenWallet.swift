@@ -46,8 +46,3 @@ open class ExtensionWalletNotInitializedViewController: UIViewController {
     
     let selector: Selector = #selector(openURL(_:))
 }
-
-private extension NSNull {
-    
-}
-
