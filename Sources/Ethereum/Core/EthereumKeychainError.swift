@@ -22,18 +22,19 @@ import Foundation
 import EthereumBase
 
 
-extension OpenWalletError._Type {
-    public static var eth_keychainWrongAccount: OpenWalletError._Type {
-        return OpenWalletError._Type(rawValue: "WRONG_ACCOUNT")
-    }
+public extension OpenWalletError._Type {
     
-    public static var eth_keychainTypedDataMalformed: OpenWalletError._Type {
-        return OpenWalletError._Type(rawValue: "TYPED_DATA_MALFORMED")
-    }
+    static let eth_keychainWrongAccount = OpenWalletError._Type(rawValue: "WRONG_ACCOUNT")
+    
+    
+    static let eth_keychainTypedDataMalformed = OpenWalletError._Type(
+        rawValue: "TYPED_DATA_MALFORMED"
+    )
 }
 
 
 extension OpenWalletError {
+    
     public static func eth_keychainWrongAccount(_ account: String) -> OpenWalletError {
         return OpenWalletError(type: .eth_keychainWrongAccount, message: account)
     }

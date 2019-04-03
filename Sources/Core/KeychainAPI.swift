@@ -24,3 +24,16 @@ public protocol KeychainRequestMessageProtocol: RequestMessageProtocol {
     static var method: String { get }
     var method: String { get }
 }
+
+public extension OpenWalletError._Type {
+    
+    static let walletIsNotInitialized = OpenWalletError._Type(rawValue: "WALLET_IS_NOT_INITIALIZED")
+}
+
+public extension OpenWalletError {
+    
+    static let walletIsNotInitialized = OpenWalletError(
+        type: .walletIsNotInitialized,
+        message: "Wallet is not initialized."
+    )
+}

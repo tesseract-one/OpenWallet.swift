@@ -58,7 +58,7 @@ open class ExtensionViewController: UIViewController {
         let vc = walletNotInitializedController()
         vc.closeCb = { [weak self] in
             if let sself = self {
-                sself.response(sself.emptyRequest.response(error: .cancelledByUser))
+                sself.response(sself.emptyRequest.response(error: .walletIsNotInitialized))
             }
             
         }
