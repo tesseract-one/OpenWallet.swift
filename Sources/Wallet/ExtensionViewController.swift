@@ -65,8 +65,7 @@ open class ExtensionViewController: UIViewController {
         showViewController(vc: vc)
     }
     
-    override open func viewDidLoad() {
-        super.viewDidLoad()
+    open func handleRequest() {
         let itemOpt = extensionContext!.inputItems
             .compactMap{$0 as? NSExtensionItem}
             .compactMap{$0.attachments}
