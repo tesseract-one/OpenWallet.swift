@@ -2,26 +2,20 @@ PODS:
   - BigInt (3.1.0):
     - SipHash (~> 1.2)
   - CryptoSwift (0.15.0)
-  - PromiseKit (6.8.3):
-    - PromiseKit/CorePromise (= 6.8.3)
-    - PromiseKit/Foundation (= 6.8.3)
-    - PromiseKit/UIKit (= 6.8.3)
   - PromiseKit/CorePromise (6.8.3)
-  - PromiseKit/Foundation (6.8.3):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.8.3):
-    - PromiseKit/CorePromise
   - SerializableValue (0.0.1)
   - SipHash (1.2.2)
   - TesseractEthereumBase (0.0.1):
+    - TesseractEthereumBase/Core (= 0.0.1)
+  - TesseractEthereumBase/Core (0.0.1):
     - BigInt (~> 3.1)
-    - CryptoSwift (~> 0.15)
+    - CryptoSwift (~> 0.13)
     - SerializableValue (~> 0.0.1)
 
 DEPENDENCIES:
-  - PromiseKit (~> 6.8.0)
-  - SerializableValue (from `https://github.com/ypopovych/swift-serializable.git`, branch `master`)
-  - "TesseractEthereumBase (from `git@github.com:ypopovych/swift-ethereum-base.git`, branch `master`)"
+  - PromiseKit/CorePromise (~> 6.8.0)
+  - SerializableValue (from `https://github.com/tesseract-one/swift-serializable.git`, branch `master`)
+  - TesseractEthereumBase (from `https://github.com/tesseract-one/swift-ethereum-base.git`, branch `master`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -33,27 +27,27 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   SerializableValue:
     :branch: master
-    :git: https://github.com/ypopovych/swift-serializable.git
+    :git: https://github.com/tesseract-one/swift-serializable.git
   TesseractEthereumBase:
     :branch: master
-    :git: "git@github.com:ypopovych/swift-ethereum-base.git"
+    :git: https://github.com/tesseract-one/swift-ethereum-base.git
 
 CHECKOUT OPTIONS:
   SerializableValue:
-    :commit: 10f23664e16c600002178cece070722c09e7b7c1
-    :git: https://github.com/ypopovych/swift-serializable.git
+    :commit: a77ea4589520eac0406912dca1dc54466ffa82ac
+    :git: https://github.com/tesseract-one/swift-serializable.git
   TesseractEthereumBase:
-    :commit: ae01eb74be4f4bf057b1cb0168ee91dce2ccb47a
-    :git: "git@github.com:ypopovych/swift-ethereum-base.git"
+    :commit: 4597c5f222589480ef140187b270cc652ed27be4
+    :git: https://github.com/tesseract-one/swift-ethereum-base.git
 
 SPEC CHECKSUMS:
   BigInt: 76b5dfdfa3e2e478d4ffdf161aeede5502e2742f
   CryptoSwift: 769f58a9e89f64e8796c2e59ce5f002dc81a2438
   PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
-  SerializableValue: 68b0bc3f578c45f99279bc0297213a57ec532663
+  SerializableValue: 4dec77eadb50f94f4070f84a8826c51bc481e9cd
   SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
-  TesseractEthereumBase: ad3ec9ec8560a464624a36e4fe99372d0ee8192b
+  TesseractEthereumBase: cc36a0266461f2bceaa18e10942bfc91e31d0fa3
 
-PODFILE CHECKSUM: afd5ac6a261972a931e5d43e8e30f7800424b987
+PODFILE CHECKSUM: c5973ecb9c6cc18e162822ab043bc53a1d4c5d5b
 
 COCOAPODS: 1.6.1
