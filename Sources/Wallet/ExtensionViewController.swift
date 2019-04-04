@@ -111,18 +111,22 @@ open class ExtensionViewController: UIViewController {
         do {
             let vc = try handler.viewContoller(for: data, uti: uti) { [unowned self] result in
                 switch result {
-                case .failure(let err): self.response(self.baseRequest.response(error: err))
+                case .failure(let err): self.error(err)
                 case .success(let res): self.response(res)
                 }
             }
             showViewController(vc: vc)
         } catch(let err) {
-            response(baseRequest.response(error: .unknownError(err)))
+            error(.unknownError(err))
         }
     }
     
+    open func error(_ error: OpenWalletError) {
+        response(baseRequest.response(error: error))
+    }
+    
     open func cancelRequest() {
-        response(baseRequest.response(error: .cancelledByUser))
+        error(.cancelledByUser)
     }
     
     open func showViewController(vc: UIViewController) {
