@@ -32,6 +32,9 @@ public protocol RequestHandler {
 }
 
 open class ExtensionViewController: UIViewController {
+    // parsed request header info
+    private var baseRequest: Request<Empty>!
+    
     open var handlers: Array<RequestHandler> {
         return []
     }
@@ -48,8 +51,6 @@ open class ExtensionViewController: UIViewController {
         }
     }
     
-    private var emptyRequest: Request<Empty>!
-    
     open func walletNotInitializedController() -> ExtensionWalletNotInitializedViewController {
         return ExtensionWalletNotInitializedViewController(nibName: nil, bundle: nil)
     }
@@ -58,14 +59,16 @@ open class ExtensionViewController: UIViewController {
         let vc = walletNotInitializedController()
         vc.closeCb = { [weak self] in
             if let sself = self {
-                sself.response(sself.emptyRequest.response(error: .walletIsNotInitialized))
+                sself.response(sself.baseRequest.response(error: .walletIsNotInitialized))
             }
             
         }
         showViewController(vc: vc)
     }
     
-    open func handleRequest() {
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        
         let itemOpt = extensionContext!.inputItems
             .compactMap{$0 as? NSExtensionItem}
             .compactMap{$0.attachments}
@@ -88,32 +91,38 @@ open class ExtensionViewController: UIViewController {
                 return
             }
             
-            self.emptyRequest = base
+            self.baseRequest = base
             
             let handlerOpt = self.handlers.first{$0.supportedUTI.contains(requestUTI)}
-            guard let handler = handlerOpt else {
+            guard handlerOpt != nil else {
                 self.response(base.response(error: .notSupported(requestUTI)))
                 return
             }
             
             DispatchQueue.main.async {
-                do {
-                    let vc = try handler.viewContoller(for: dataStr, uti: requestUTI) { result in
-                        switch result {
-                        case .failure(let err): self.response(base.response(error: err))
-                        case .success(let response): self.response(response)
-                        }
-                    }
-                    self.showViewController(vc: vc)
-                } catch(let err) {
-                    self.extensionContext!.cancelRequest(withError: err)
-                }
+                self.onLoaded(data: dataStr, uti: requestUTI)
             }
         }
     }
     
+    open func onLoaded(data: String, uti: String) {
+        // can be force unwrapped. Checked on viewDidLoad step.
+        let handler = handlers.first{$0.supportedUTI.contains(uti)}!
+        do {
+            let vc = try handler.viewContoller(for: data, uti: uti) { [unowned self] result in
+                switch result {
+                case .failure(let err): self.response(self.baseRequest.response(error: err))
+                case .success(let res): self.response(res)
+                }
+            }
+            showViewController(vc: vc)
+        } catch(let err) {
+            response(baseRequest.response(error: .unknownError(err)))
+        }
+    }
+    
     open func cancelRequest() {
-        response(emptyRequest.response(error: .cancelledByUser))
+        response(baseRequest.response(error: .cancelledByUser))
     }
     
     open func showViewController(vc: UIViewController) {
