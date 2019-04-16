@@ -2,7 +2,7 @@ PODS:
   - BigInt (3.1.0):
     - SipHash (~> 1.2)
   - CryptoSwift (0.15.0)
-  - PromiseKit/CorePromise (6.8.3)
+  - PromiseKit/CorePromise (6.8.4)
   - SerializableValue (0.0.1)
   - SipHash (1.2.2)
   - TesseractEthereumBase (0.0.1):
@@ -34,17 +34,17 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SerializableValue:
-    :commit: a77ea4589520eac0406912dca1dc54466ffa82ac
+    :commit: 0e4aa421681921c3144c42f9c4439eba832f81d1
     :git: https://github.com/tesseract-one/swift-serializable.git
   TesseractEthereumBase:
-    :commit: 4597c5f222589480ef140187b270cc652ed27be4
+    :commit: 7ef49035b4e26d6d9a3e2c08efe0a573e351730b
     :git: https://github.com/tesseract-one/swift-ethereum-base.git
 
 SPEC CHECKSUMS:
   BigInt: 76b5dfdfa3e2e478d4ffdf161aeede5502e2742f
   CryptoSwift: 769f58a9e89f64e8796c2e59ce5f002dc81a2438
-  PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
-  SerializableValue: 4dec77eadb50f94f4070f84a8826c51bc481e9cd
+  PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
+  SerializableValue: 231634d0fa47a27bfbf46337c954107454864c9d
   SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
   TesseractEthereumBase: cc36a0266461f2bceaa18e10942bfc91e31d0fa3
 

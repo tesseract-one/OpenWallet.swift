@@ -78,8 +78,8 @@ public struct EthereumSignTxKeychainRequest: EthereumRequestMessageProtocol {
     public init(tx: Transaction, chainId: UInt64, networkId: UInt64) {
         self.init(
             nonce: "0x" + String(tx.nonce, radix: 16),
-            from: tx.from.hex(eip55: false),
-            to: tx.to?.hex(eip55: false),
+            from: tx.from.hex(eip55: true),
+            to: tx.to?.hex(eip55: true),
             gas: "0x" + String(tx.gas, radix: 16),
             gasPrice: "0x" + String(tx.gasPrice, radix: 16),
             value: "0x" + String(tx.value, radix: 16),
@@ -94,8 +94,8 @@ public struct EthereumSignTxKeychainRequest: EthereumRequestMessageProtocol {
             nonce: BigUInt(remove0x(nonce), radix: 16)!,
             gasPrice: BigUInt(remove0x(gasPrice), radix: 16)!,
             gas: BigUInt(remove0x(gas), radix: 16)!,
-            from: try! Address(hex: from, eip55: false),
-            to: to != nil ? try! Address(hex: to!, eip55: false) : nil,
+            from: try! Address(hex: from),
+            to: to != nil ? try! Address(hex: to!) : nil,
             value: BigUInt(remove0x(value), radix: 16)!,
             data: data
         )

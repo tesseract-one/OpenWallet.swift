@@ -51,7 +51,7 @@ extension OpenWallet: SignProvider {
                 .mapError { SignProviderError(error: $0) }
                 .flatMap { account in
                     do {
-                        return .success([try Address(hex: account, eip55: false)])
+                        return .success([try Address(hex: account)])
                     } catch let err {
                         return .failure(.internalError(err))
                     }
@@ -79,7 +79,7 @@ extension OpenWallet: SignProvider {
         keychain(
             net: .Ethereum,
             request: EthereumSignDataKeychainRequest(
-                account: account.hex(eip55: false),
+                account: account.hex(eip55: true),
                 data: data,
                 networkId: networkId
             )
@@ -95,7 +95,7 @@ extension OpenWallet: SignProvider {
         keychain(
             net: .Ethereum,
             request: EthereumSignTypedDataKeychainRequest(
-                account: account.hex(eip55: false),
+                account: account.hex(eip55: true),
                 data: data,
                 networkId: networkId
             )
