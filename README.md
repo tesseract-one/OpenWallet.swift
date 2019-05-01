@@ -74,7 +74,7 @@ openWallet.eth_accounts(networkId: 1) { response in
 import OpenWallet
 
 let data = "some string".data(using: .utf8)!
-let address = try! Address(hex: "0x00000000000000000000")
+let address = try! Address(hex: "0x0000000000000000000000000000000000000000")
 
 let openWallet = OpenWallet(networks: [.Ethereum])
 
