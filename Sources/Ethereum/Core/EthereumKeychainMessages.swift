@@ -22,7 +22,7 @@ import Foundation
 import Serializable
 import BigInt
 
-@_exported import EthereumBase
+@_exported import EthereumTypes
 
 
 public protocol EthereumRequestMessageProtocol: KeychainRequestMessageProtocol {

@@ -1,53 +1,35 @@
 PODS:
-  - BigInt (3.1.0):
-    - SipHash (~> 1.2)
-  - CryptoSwift (0.15.0)
+  - BigInt (4.0.0)
+  - CryptoSwift (1.0.0)
   - PromiseKit/CorePromise (6.8.4)
-  - SerializableValue (0.0.1)
-  - SipHash (1.2.2)
-  - TesseractEthereumBase (0.0.1):
-    - TesseractEthereumBase/Core (= 0.0.1)
-  - TesseractEthereumBase/Core (0.0.1):
-    - BigInt (~> 3.1)
-    - CryptoSwift (~> 0.13)
-    - SerializableValue (~> 0.0.1)
+  - Serializable.swift (0.1.1)
+  - Tesseract.EthereumTypes (0.1.1):
+    - Tesseract.EthereumTypes/Core (= 0.1.1)
+  - Tesseract.EthereumTypes/Core (0.1.1):
+    - BigInt (~> 4.0)
+    - CryptoSwift (~> 1.0)
+    - Serializable.swift (~> 0.1)
 
 DEPENDENCIES:
   - PromiseKit/CorePromise (~> 6.8.0)
-  - SerializableValue (from `https://github.com/tesseract-one/swift-serializable.git`, branch `master`)
-  - TesseractEthereumBase (from `https://github.com/tesseract-one/swift-ethereum-base.git`, branch `master`)
+  - Serializable.swift (~> 0.1)
+  - Tesseract.EthereumTypes (~> 0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BigInt
     - CryptoSwift
     - PromiseKit
-    - SipHash
-
-EXTERNAL SOURCES:
-  SerializableValue:
-    :branch: master
-    :git: https://github.com/tesseract-one/swift-serializable.git
-  TesseractEthereumBase:
-    :branch: master
-    :git: https://github.com/tesseract-one/swift-ethereum-base.git
-
-CHECKOUT OPTIONS:
-  SerializableValue:
-    :commit: 0e4aa421681921c3144c42f9c4439eba832f81d1
-    :git: https://github.com/tesseract-one/swift-serializable.git
-  TesseractEthereumBase:
-    :commit: 7ef49035b4e26d6d9a3e2c08efe0a573e351730b
-    :git: https://github.com/tesseract-one/swift-ethereum-base.git
+    - Serializable.swift
+    - Tesseract.EthereumTypes
 
 SPEC CHECKSUMS:
-  BigInt: 76b5dfdfa3e2e478d4ffdf161aeede5502e2742f
-  CryptoSwift: 769f58a9e89f64e8796c2e59ce5f002dc81a2438
+  BigInt: 2aad1a9942dc932ec8b84290d2c564a3d76f97ab
+  CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
   PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
-  SerializableValue: 231634d0fa47a27bfbf46337c954107454864c9d
-  SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
-  TesseractEthereumBase: cc36a0266461f2bceaa18e10942bfc91e31d0fa3
+  Serializable.swift: 46a21fd252974669c1416edf741db56206fabd8b
+  Tesseract.EthereumTypes: 1b2ee67de19b80c5e934993a0436248cec9e15c5
 
-PODFILE CHECKSUM: c5973ecb9c6cc18e162822ab043bc53a1d4c5d5b
+PODFILE CHECKSUM: 87f8aee5e4a9b087ed714644a44f8b121bf68b57
 
 COCOAPODS: 1.6.1

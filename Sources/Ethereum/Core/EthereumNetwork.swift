@@ -19,7 +19,7 @@
 //
 
 import Foundation
-import EthereumBase
+import EthereumTypes
 
 
 public extension Network {

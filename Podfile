@@ -1,18 +1,20 @@
 use_frameworks!
-platform :ios, '10.0'
-
 inhibit_all_warnings!
 
-target :OpenWallet do
-    pod 'TesseractEthereumBase', :git => 'https://github.com/tesseract-one/swift-ethereum-base.git', :branch => 'master'
-    pod 'SerializableValue', :git => 'https://github.com/tesseract-one/swift-serializable.git', :branch => 'master'
-
+def common_pods
+    pod 'Tesseract.EthereumTypes', '~> 0.1'
+    pod 'Serializable.swift', '~> 0.1'
     pod 'PromiseKit/CorePromise', '~> 6.8.0'
 end
 
-target :OpenWalletTests do
-    pod 'TesseractEthereumBase', :git => 'https://github.com/tesseract-one/swift-ethereum-base.git', :branch => 'master'
-    pod 'SerializableValue', :git => 'https://github.com/tesseract-one/swift-serializable.git', :branch => 'master'
-    
-    pod 'PromiseKit/CorePromise', '~> 6.8.0'
+target 'OpenWallet-iOS' do
+    platform :ios, '10.0'
+
+    common_pods
+end
+
+target 'OpenWalletTests-iOS' do
+    platform :ios, '10.0'
+
+    common_pods
 end

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F67120395EA2B6FF58DEB3B /* Pods_OpenWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4B3D8B2A37607B4ADB1585 /* Pods_OpenWallet.framework */; };
+		89E23E45703DB5AC30A0FF35 /* Pods_OpenWallet_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E61042F2A1C8D6F7E162FFC /* Pods_OpenWallet_iOS.framework */; };
 		926C55532253CFBE00D14851 /* ExtensionWalletNotInitializedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926C55522253CFBE00D14851 /* ExtensionWalletNotInitializedViewController.swift */; };
 		927C5A49224D48D200F2AA50 /* OpenWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 927C5A3F224D48D200F2AA50 /* OpenWallet.framework */; };
 		927C5A4E224D48D200F2AA50 /* OpenWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5A4D224D48D200F2AA50 /* OpenWalletTests.swift */; };
@@ -25,9 +25,8 @@
 		927C5A7D224D625C00F2AA50 /* EthereumKeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5A7C224D625C00F2AA50 /* EthereumKeychainError.swift */; };
 		927C5A7F224D651F00F2AA50 /* EthereumNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5A7E224D651F00F2AA50 /* EthereumNetwork.swift */; };
 		927C5A84224D80B100F2AA50 /* KeychainAPI+PromiseKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5A83224D80B100F2AA50 /* KeychainAPI+PromiseKit.swift */; };
-		927C5A86224D817200F2AA50 /* TesseractOpenWallet.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 927C5A85224D817200F2AA50 /* TesseractOpenWallet.podspec */; };
 		927C5ACA224E94AB00F2AA50 /* OpenWallet+KeychainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5AC9224E94AB00F2AA50 /* OpenWallet+KeychainAPI.swift */; };
-		C0A15632F86E0901AC79BC31 /* Pods_OpenWalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97DF7F815DFAD7216B0F1606 /* Pods_OpenWalletTests.framework */; };
+		E9ACFEB00101F2B0B5BE95B7 /* Pods_OpenWalletTests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A410226846F6E83F0E63618 /* Pods_OpenWalletTests_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,14 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0173BA86EF6B54640C15A98B /* Pods-OpenWalletTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWalletTests.debug.xcconfig"; path = "Target Support Files/Pods-OpenWalletTests/Pods-OpenWalletTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2C4B3D8B2A37607B4ADB1585 /* Pods_OpenWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5AF309211E75A90895A5CCF2 /* Pods-OpenWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWallet.debug.xcconfig"; path = "Target Support Files/Pods-OpenWallet/Pods-OpenWallet.debug.xcconfig"; sourceTree = "<group>"; };
-		90B852193D727092685EEE2F /* Pods-OpenWalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWalletTests.release.xcconfig"; path = "Target Support Files/Pods-OpenWalletTests/Pods-OpenWalletTests.release.xcconfig"; sourceTree = "<group>"; };
+		0E61042F2A1C8D6F7E162FFC /* Pods_OpenWallet_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenWallet_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A410226846F6E83F0E63618 /* Pods_OpenWalletTests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenWalletTests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C966356F8D37F882BAC5F21 /* Pods-OpenWalletTests-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWalletTests-iOS.release.xcconfig"; path = "Target Support Files/Pods-OpenWalletTests-iOS/Pods-OpenWalletTests-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		8154A9CEB2292B8AD13901DA /* Pods-OpenWallet-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWallet-iOS.release.xcconfig"; path = "Target Support Files/Pods-OpenWallet-iOS/Pods-OpenWallet-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		926C55522253CFBE00D14851 /* ExtensionWalletNotInitializedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionWalletNotInitializedViewController.swift; sourceTree = "<group>"; };
 		927C5A3F224D48D200F2AA50 /* OpenWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		927C5A43224D48D200F2AA50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		927C5A48224D48D200F2AA50 /* OpenWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		927C5A48224D48D200F2AA50 /* OpenWalletTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OpenWalletTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		927C5A4D224D48D200F2AA50 /* OpenWalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWalletTests.swift; sourceTree = "<group>"; };
 		927C5A4F224D48D200F2AA50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		927C5A5B224D4A8D00F2AA50 /* KeychainAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainAPI.swift; sourceTree = "<group>"; };
@@ -65,10 +64,10 @@
 		927C5A7C224D625C00F2AA50 /* EthereumKeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumKeychainError.swift; sourceTree = "<group>"; };
 		927C5A7E224D651F00F2AA50 /* EthereumNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumNetwork.swift; sourceTree = "<group>"; };
 		927C5A83224D80B100F2AA50 /* KeychainAPI+PromiseKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeychainAPI+PromiseKit.swift"; sourceTree = "<group>"; };
-		927C5A85224D817200F2AA50 /* TesseractOpenWallet.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TesseractOpenWallet.podspec; sourceTree = "<group>"; };
+		927C5A85224D817200F2AA50 /* Tesseract.OpenWallet.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tesseract.OpenWallet.podspec; sourceTree = "<group>"; };
 		927C5AC9224E94AB00F2AA50 /* OpenWallet+KeychainAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OpenWallet+KeychainAPI.swift"; sourceTree = "<group>"; };
-		97DF7F815DFAD7216B0F1606 /* Pods_OpenWalletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenWalletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B81B22C0745BB0109E83A86C /* Pods-OpenWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWallet.release.xcconfig"; path = "Target Support Files/Pods-OpenWallet/Pods-OpenWallet.release.xcconfig"; sourceTree = "<group>"; };
+		B20E9C531DC4376B8E2BCB19 /* Pods-OpenWalletTests-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWalletTests-iOS.debug.xcconfig"; path = "Target Support Files/Pods-OpenWalletTests-iOS/Pods-OpenWalletTests-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		E1A036E872CC3031BA9D668C /* Pods-OpenWallet-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWallet-iOS.debug.xcconfig"; path = "Target Support Files/Pods-OpenWallet-iOS/Pods-OpenWallet-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F67120395EA2B6FF58DEB3B /* Pods_OpenWallet.framework in Frameworks */,
+				89E23E45703DB5AC30A0FF35 /* Pods_OpenWallet_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +84,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				927C5A49224D48D200F2AA50 /* OpenWallet.framework in Frameworks */,
-				C0A15632F86E0901AC79BC31 /* Pods_OpenWalletTests.framework in Frameworks */,
+				E9ACFEB00101F2B0B5BE95B7 /* Pods_OpenWalletTests_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,10 +94,10 @@
 		6B06C8E57319E939D245A335 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5AF309211E75A90895A5CCF2 /* Pods-OpenWallet.debug.xcconfig */,
-				B81B22C0745BB0109E83A86C /* Pods-OpenWallet.release.xcconfig */,
-				0173BA86EF6B54640C15A98B /* Pods-OpenWalletTests.debug.xcconfig */,
-				90B852193D727092685EEE2F /* Pods-OpenWalletTests.release.xcconfig */,
+				E1A036E872CC3031BA9D668C /* Pods-OpenWallet-iOS.debug.xcconfig */,
+				8154A9CEB2292B8AD13901DA /* Pods-OpenWallet-iOS.release.xcconfig */,
+				B20E9C531DC4376B8E2BCB19 /* Pods-OpenWalletTests-iOS.debug.xcconfig */,
+				2C966356F8D37F882BAC5F21 /* Pods-OpenWalletTests-iOS.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -106,7 +105,7 @@
 		927C5A35224D48D200F2AA50 = {
 			isa = PBXGroup;
 			children = (
-				927C5A85224D817200F2AA50 /* TesseractOpenWallet.podspec */,
+				927C5A85224D817200F2AA50 /* Tesseract.OpenWallet.podspec */,
 				927C5A59224D494A00F2AA50 /* Sources */,
 				927C5A5A224D495000F2AA50 /* Tests */,
 				927C5A40224D48D200F2AA50 /* Products */,
@@ -119,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				927C5A3F224D48D200F2AA50 /* OpenWallet.framework */,
-				927C5A48224D48D200F2AA50 /* OpenWalletTests.xctest */,
+				927C5A48224D48D200F2AA50 /* OpenWalletTests-iOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -232,8 +231,8 @@
 		BDF0B626EA5562D2B7E27F6F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2C4B3D8B2A37607B4ADB1585 /* Pods_OpenWallet.framework */,
-				97DF7F815DFAD7216B0F1606 /* Pods_OpenWalletTests.framework */,
+				0E61042F2A1C8D6F7E162FFC /* Pods_OpenWallet_iOS.framework */,
+				2A410226846F6E83F0E63618 /* Pods_OpenWalletTests_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -251,9 +250,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		927C5A3E224D48D200F2AA50 /* OpenWallet */ = {
+		927C5A3E224D48D200F2AA50 /* OpenWallet-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 927C5A53224D48D200F2AA50 /* Build configuration list for PBXNativeTarget "OpenWallet" */;
+			buildConfigurationList = 927C5A53224D48D200F2AA50 /* Build configuration list for PBXNativeTarget "OpenWallet-iOS" */;
 			buildPhases = (
 				801DBE566E84444E33EBCE4B /* [CP] Check Pods Manifest.lock */,
 				927C5A3A224D48D200F2AA50 /* Headers */,
@@ -265,14 +264,14 @@
 			);
 			dependencies = (
 			);
-			name = OpenWallet;
+			name = "OpenWallet-iOS";
 			productName = OpenWallet;
 			productReference = 927C5A3F224D48D200F2AA50 /* OpenWallet.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		927C5A47224D48D200F2AA50 /* OpenWalletTests */ = {
+		927C5A47224D48D200F2AA50 /* OpenWalletTests-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 927C5A56224D48D200F2AA50 /* Build configuration list for PBXNativeTarget "OpenWalletTests" */;
+			buildConfigurationList = 927C5A56224D48D200F2AA50 /* Build configuration list for PBXNativeTarget "OpenWalletTests-iOS" */;
 			buildPhases = (
 				C2B5DED4EA3466136C3F77CD /* [CP] Check Pods Manifest.lock */,
 				927C5A44224D48D200F2AA50 /* Sources */,
@@ -285,9 +284,9 @@
 			dependencies = (
 				927C5A4B224D48D200F2AA50 /* PBXTargetDependency */,
 			);
-			name = OpenWalletTests;
+			name = "OpenWalletTests-iOS";
 			productName = OpenWalletTests;
-			productReference = 927C5A48224D48D200F2AA50 /* OpenWalletTests.xctest */;
+			productReference = 927C5A48224D48D200F2AA50 /* OpenWalletTests-iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -321,8 +320,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				927C5A3E224D48D200F2AA50 /* OpenWallet */,
-				927C5A47224D48D200F2AA50 /* OpenWalletTests */,
+				927C5A3E224D48D200F2AA50 /* OpenWallet-iOS */,
+				927C5A47224D48D200F2AA50 /* OpenWalletTests-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -332,7 +331,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				927C5A86224D817200F2AA50 /* TesseractOpenWallet.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,13 +352,12 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OpenWalletTests/Pods-OpenWalletTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-OpenWalletTests-iOS/Pods-OpenWalletTests-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SerializableValue/Serializable.framework",
-				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
-				"${BUILT_PRODUCTS_DIR}/TesseractEthereumBase/EthereumBase.framework",
+				"${BUILT_PRODUCTS_DIR}/Serializable.swift/Serializable.framework",
+				"${BUILT_PRODUCTS_DIR}/Tesseract.EthereumTypes/EthereumTypes.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -370,12 +367,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Serializable.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EthereumBase.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EthereumTypes.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenWalletTests/Pods-OpenWalletTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenWalletTests-iOS/Pods-OpenWalletTests-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		801DBE566E84444E33EBCE4B /* [CP] Check Pods Manifest.lock */ = {
@@ -393,7 +389,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OpenWallet-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-OpenWallet-iOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -415,7 +411,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OpenWalletTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-OpenWalletTests-iOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -461,7 +457,7 @@
 /* Begin PBXTargetDependency section */
 		927C5A4B224D48D200F2AA50 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 927C5A3E224D48D200F2AA50 /* OpenWallet */;
+			target = 927C5A3E224D48D200F2AA50 /* OpenWallet-iOS */;
 			targetProxy = 927C5A4A224D48D200F2AA50 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -520,15 +516,18 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -579,21 +578,24 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
 		927C5A54224D48D200F2AA50 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5AF309211E75A90895A5CCF2 /* Pods-OpenWallet.debug.xcconfig */;
+			baseConfigurationReference = E1A036E872CC3031BA9D668C /* Pods-OpenWallet-iOS.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -609,8 +611,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = one.tesseract.ios.OpenWallet;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = one.tesseract.OpenWallet;
+				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -619,7 +621,7 @@
 		};
 		927C5A55224D48D200F2AA50 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B81B22C0745BB0109E83A86C /* Pods-OpenWallet.release.xcconfig */;
+			baseConfigurationReference = 8154A9CEB2292B8AD13901DA /* Pods-OpenWallet-iOS.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -635,8 +637,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = one.tesseract.ios.OpenWallet;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = one.tesseract.OpenWallet;
+				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -644,7 +646,7 @@
 		};
 		927C5A57224D48D200F2AA50 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0173BA86EF6B54640C15A98B /* Pods-OpenWalletTests.debug.xcconfig */;
+			baseConfigurationReference = B20E9C531DC4376B8E2BCB19 /* Pods-OpenWalletTests-iOS.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests/OpenWalletTests/Info.plist;
@@ -661,7 +663,7 @@
 		};
 		927C5A58224D48D200F2AA50 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90B852193D727092685EEE2F /* Pods-OpenWalletTests.release.xcconfig */;
+			baseConfigurationReference = 2C966356F8D37F882BAC5F21 /* Pods-OpenWalletTests-iOS.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests/OpenWalletTests/Info.plist;
@@ -688,7 +690,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		927C5A53224D48D200F2AA50 /* Build configuration list for PBXNativeTarget "OpenWallet" */ = {
+		927C5A53224D48D200F2AA50 /* Build configuration list for PBXNativeTarget "OpenWallet-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				927C5A54224D48D200F2AA50 /* Debug */,
@@ -697,7 +699,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		927C5A56224D48D200F2AA50 /* Build configuration list for PBXNativeTarget "OpenWalletTests" */ = {
+		927C5A56224D48D200F2AA50 /* Build configuration list for PBXNativeTarget "OpenWalletTests-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				927C5A57224D48D200F2AA50 /* Debug */,
