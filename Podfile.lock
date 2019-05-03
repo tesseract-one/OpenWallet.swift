@@ -1,17 +1,13 @@
 PODS:
   - BigInt (4.0.0)
   - CryptoSwift (1.0.0)
-  - PromiseKit/CorePromise (6.8.4)
   - Serializable.swift (0.1.1)
-  - Tesseract.EthereumTypes (0.1.1):
-    - Tesseract.EthereumTypes/Core (= 0.1.1)
-  - Tesseract.EthereumTypes/Core (0.1.1):
+  - Tesseract.EthereumTypes (0.1.4):
     - BigInt (~> 4.0)
     - CryptoSwift (~> 1.0)
     - Serializable.swift (~> 0.1)
 
 DEPENDENCIES:
-  - PromiseKit/CorePromise (~> 6.8.0)
   - Serializable.swift (~> 0.1)
   - Tesseract.EthereumTypes (~> 0.1)
 
@@ -19,17 +15,15 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BigInt
     - CryptoSwift
-    - PromiseKit
     - Serializable.swift
     - Tesseract.EthereumTypes
 
 SPEC CHECKSUMS:
   BigInt: 2aad1a9942dc932ec8b84290d2c564a3d76f97ab
   CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
-  PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
   Serializable.swift: 46a21fd252974669c1416edf741db56206fabd8b
-  Tesseract.EthereumTypes: 1b2ee67de19b80c5e934993a0436248cec9e15c5
+  Tesseract.EthereumTypes: b69c054254a99d318c3101eba5b6912e3aa2eb0a
 
-PODFILE CHECKSUM: 87f8aee5e4a9b087ed714644a44f8b121bf68b57
+PODFILE CHECKSUM: 5d49c019bd5257bf7330c666e9dcffad01e6c3a6
 
 COCOAPODS: 1.6.1

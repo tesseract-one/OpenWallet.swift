@@ -24,7 +24,6 @@
 		927C5A77224D50C900F2AA50 /* EthereumSignProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5A76224D50C900F2AA50 /* EthereumSignProvider.swift */; };
 		927C5A7D224D625C00F2AA50 /* EthereumKeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5A7C224D625C00F2AA50 /* EthereumKeychainError.swift */; };
 		927C5A7F224D651F00F2AA50 /* EthereumNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5A7E224D651F00F2AA50 /* EthereumNetwork.swift */; };
-		927C5A84224D80B100F2AA50 /* KeychainAPI+PromiseKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5A83224D80B100F2AA50 /* KeychainAPI+PromiseKit.swift */; };
 		927C5ACA224E94AB00F2AA50 /* OpenWallet+KeychainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5AC9224E94AB00F2AA50 /* OpenWallet+KeychainAPI.swift */; };
 		E9ACFEB00101F2B0B5BE95B7 /* Pods_OpenWalletTests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A410226846F6E83F0E63618 /* Pods_OpenWalletTests_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -63,7 +62,6 @@
 		927C5A76224D50C900F2AA50 /* EthereumSignProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumSignProvider.swift; sourceTree = "<group>"; };
 		927C5A7C224D625C00F2AA50 /* EthereumKeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumKeychainError.swift; sourceTree = "<group>"; };
 		927C5A7E224D651F00F2AA50 /* EthereumNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumNetwork.swift; sourceTree = "<group>"; };
-		927C5A83224D80B100F2AA50 /* KeychainAPI+PromiseKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeychainAPI+PromiseKit.swift"; sourceTree = "<group>"; };
 		927C5A85224D817200F2AA50 /* Tesseract.OpenWallet.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tesseract.OpenWallet.podspec; sourceTree = "<group>"; };
 		927C5AC9224E94AB00F2AA50 /* OpenWallet+KeychainAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OpenWallet+KeychainAPI.swift"; sourceTree = "<group>"; };
 		B20E9C531DC4376B8E2BCB19 /* Pods-OpenWalletTests-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWalletTests-iOS.debug.xcconfig"; path = "Target Support Files/Pods-OpenWalletTests-iOS/Pods-OpenWalletTests-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 				927C5A41224D48D200F2AA50 /* Core */,
 				927C5A64224D4AEB00F2AA50 /* Wallet */,
 				927C5A63224D4ADD00F2AA50 /* Client */,
-				927C5A82224D809500F2AA50 /* PromiseKit */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -218,14 +215,6 @@
 				927C5A76224D50C900F2AA50 /* EthereumSignProvider.swift */,
 			);
 			path = Client;
-			sourceTree = "<group>";
-		};
-		927C5A82224D809500F2AA50 /* PromiseKit */ = {
-			isa = PBXGroup;
-			children = (
-				927C5A83224D80B100F2AA50 /* KeychainAPI+PromiseKit.swift */,
-			);
-			path = PromiseKit;
 			sourceTree = "<group>";
 		};
 		BDF0B626EA5562D2B7E27F6F /* Frameworks */ = {
@@ -355,7 +344,6 @@
 				"${PODS_ROOT}/Target Support Files/Pods-OpenWalletTests-iOS/Pods-OpenWalletTests-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Serializable.swift/Serializable.framework",
 				"${BUILT_PRODUCTS_DIR}/Tesseract.EthereumTypes/EthereumTypes.framework",
 			);
@@ -365,7 +353,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Serializable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EthereumTypes.framework",
 			);
@@ -426,7 +413,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				927C5A71224D4EDC00F2AA50 /* Network.swift in Sources */,
-				927C5A84224D80B100F2AA50 /* KeychainAPI+PromiseKit.swift in Sources */,
 				927C5ACA224E94AB00F2AA50 /* OpenWallet+KeychainAPI.swift in Sources */,
 				927C5A6B224D4C9900F2AA50 /* EthereumKeychainRequestHandler.swift in Sources */,
 				927C5A62224D4A8D00F2AA50 /* ExtensionViewController.swift in Sources */,

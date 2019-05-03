@@ -34,6 +34,14 @@ public class OpenWallet {
         self.networks = Set(networks)
     }
     
+    public func hasWallet(for api: String) -> Bool {
+        let apiStr = "openwallet-\(api.replacingOccurrences(of: ".", with: "-"))://"
+        guard let apiUrl = URL(string: apiStr) else {
+            return false
+        }
+        return UIApplication.shared.canOpenURL(apiUrl)
+    }
+    
     public func request<R: RequestMessageProtocol>(
         _ request: Request<R>,
         response: @escaping (Swift.Result<R.Response, OpenWalletError>) -> Void

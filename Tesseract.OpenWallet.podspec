@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Tesseract.OpenWallet'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Tesseract Open Wallet Protocol implementation for Swift'
 
   s.description      = <<-DESC
@@ -28,46 +28,33 @@ Tesseract Plaftorm Open Wallet Protocol implementation for Swift
     ss.dependency 'Tesseract.OpenWallet/Core'
   end
 
-  s.subspec 'PromiseKit' do |ss|
-    ss.source_files = 'Sources/PromiseKit/**/*.swift'
-
-    ss.dependency 'Tesseract.OpenWallet/Client'
-    ss.dependency 'PromiseKit/CorePromise', '~> 6.8.0'
-  end
-
-  s.subspec 'EthereumCore' do |ss|
-    ss.source_files = 'Sources/Ethereum/Core/**/*.swift'
-
-    ss.dependency 'Tesseract.OpenWallet/Core'
-    ss.dependency 'Tesseract.EthereumTypes', '~> 0.1'
-  end
-
-  s.subspec 'Ethereum' do |ss|
-    ss.source_files = 'Sources/Ethereum/Client/**/*.swift'
-
-    ss.dependency 'Tesseract.OpenWallet/Client'
-    ss.dependency 'Tesseract.OpenWallet/EthereumCore'
-  end
-
-  s.subspec 'EthereumPromiseKit' do |ss|
-    ss.source_files = 'Sources/Ethereum/Client/**/*.swift'
-
-    ss.dependency 'Tesseract.OpenWallet/Ethereum'
-    ss.dependency 'Tesseract.OpenWallet/PromiseKit'
-    ss.dependency 'Tesseract.EthereumTypes/PromiseKit', '~> 0.1'
-  end
-
   s.subspec 'Wallet' do |ss|
     ss.source_files = 'Sources/Wallet/**/*.swift'
 
     ss.dependency 'Tesseract.OpenWallet/Core'
   end
 
-  s.subspec 'WalletEthereum' do |ss|
+  s.subspec 'Ethereum.Core' do |ss|
+    ss.source_files = 'Sources/Ethereum/Core/**/*.swift'
+
+    ss.dependency 'Tesseract.OpenWallet/Core'
+    ss.dependency 'Tesseract.EthereumTypes', '~> 0.1'
+    ss.dependency 'Serializable.swift', '~> 0.1'
+  end
+
+  s.subspec 'Ethereum' do |ss|
+    ss.source_files = 'Sources/Ethereum/Client/**/*.swift'
+
+    ss.dependency 'Tesseract.OpenWallet/Client'
+    ss.dependency 'Tesseract.OpenWallet/Ethereum.Core'
+  end
+
+
+  s.subspec 'Wallet.Ethereum' do |ss|
     ss.source_files = 'Sources/Ethereum/Wallet/**/*.swift'
 
     ss.dependency 'Tesseract.OpenWallet/Wallet'
-    ss.dependency 'Tesseract.OpenWallet/EthereumCore'
+    ss.dependency 'Tesseract.OpenWallet/Ethereum.Core'
   end
 
   s.default_subspecs = 'Core', 'Client'

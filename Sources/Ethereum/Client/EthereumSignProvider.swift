@@ -104,9 +104,3 @@ extension OpenWallet: SignProvider {
         }
     }
 }
-
-extension OpenWallet {
-    public var ethereum: APIRegistry {
-        return APIRegistry(signProvider: self)
-    }
-}
