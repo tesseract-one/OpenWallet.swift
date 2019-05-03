@@ -27,11 +27,8 @@ public class OpenWallet {
     private let lock = NSLock()
     private var requestQueue: Array<UIActivityViewController> = []
     
-    public let networks: Set<Network>
-    
-    public init(networks: [Network]) {
+    public init() {
         self.requestCounter = 0
-        self.networks = Set(networks)
     }
     
     public func hasWallet(for api: String) -> Bool {
