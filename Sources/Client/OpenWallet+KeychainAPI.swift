@@ -23,7 +23,8 @@ import Foundation
 
 public class KeychainRequest<Message: KeychainRequestMessageProtocol>: Request<Message> {
     public init(network: Network, id: UInt32, request: Message) {
-        super.init(id: id, request: request, uti: "one.openwallet.keychain.\(network.uti)")
+        let uti = "\(OPENWALLET_API_PREFIX).\(OpenWalletAPI.keychain.rawValue).\(network.uti)"
+        super.init(id: id, request: request, uti: uti)
     }
     
     required public init(json: String, uti: String) throws {
@@ -32,8 +33,8 @@ public class KeychainRequest<Message: KeychainRequestMessageProtocol>: Request<M
 }
 
 public extension OpenWallet {
-    func hasWallet(keychain net: Network) -> Bool {
-        return hasWallet(for: "keychain.\(net.uti)")
+    func walletHasAPI(keychain net: Network) -> Bool {
+        return walletHasAPI(api: .keychain, subApi: net.uti)
     }
     
     func keychain<R: KeychainRequestMessageProtocol>(

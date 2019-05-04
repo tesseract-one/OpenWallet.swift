@@ -31,8 +31,12 @@ public class OpenWallet {
         self.requestCounter = 0
     }
     
-    public func hasWallet(for api: String) -> Bool {
-        let apiStr = "openwallet-\(api.replacingOccurrences(of: ".", with: "-"))://"
+    public func walletHasAPI(api: OpenWalletAPI, subApi: String? = nil) -> Bool {
+        var apiStr = "\(OPENWALLET_URL_API_PREFIX)-\(api.rawValue)"
+        if let subApi = subApi {
+            apiStr += "-\(subApi.replacingOccurrences(of: ".", with: "-"))"
+        }
+        apiStr += "://"
         guard let apiUrl = URL(string: apiStr) else {
             return false
         }

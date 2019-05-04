@@ -1,8 +1,8 @@
 //
-//  KeychainAPI.swift
+//  API.swift
 //  OpenWallet
 //
-//  Created by Yehor Popovych on 3/7/19.
+//  Created by Yehor Popovych on 5/4/19.
 //  Copyright © 2019 Tesseract Systems, Inc. All rights reserved.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,24 +20,13 @@
 
 import Foundation
 
-public protocol KeychainRequestMessageProtocol: RequestMessageProtocol {
-    static var method: String { get }
-    var method: String { get }
-}
+public let OPENWALLET_API_PREFIX = "one.openwallet"
+public let OPENWALLET_URL_API_PREFIX = "openwallet"
 
-public extension OpenWalletError._Type {
+public struct OpenWalletAPI: RawRepresentable {
+    public let rawValue: String
     
-    static let walletIsNotInitialized = OpenWalletError._Type(rawValue: "WALLET_IS_NOT_INITIALIZED")
-}
-
-public extension OpenWalletError {
-    
-    static let walletIsNotInitialized = OpenWalletError(
-        type: .walletIsNotInitialized,
-        message: "Wallet is not initialized."
-    )
-}
-
-public extension OpenWalletAPI {
-    static let keychain = OpenWalletAPI(rawValue: "keychain")
+    public init(rawValue: String) {
+        self.rawValue = rawValue
+    }
 }

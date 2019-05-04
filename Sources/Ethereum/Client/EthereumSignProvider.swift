@@ -42,6 +42,11 @@ extension SignProviderError {
 }
 
 extension OpenWallet: SignProvider {
+    
+    public var canSign: Bool {
+        return walletHasAPI(keychain: .Ethereum)
+    }
+    
     public func eth_accounts(
         networkId: UInt64,
         response: @escaping OpenWallet.Response<Array<Address>>
