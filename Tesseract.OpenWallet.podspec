@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Tesseract.OpenWallet'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'Tesseract Open Wallet Protocol implementation for Swift'
 
   s.description      = <<-DESC
