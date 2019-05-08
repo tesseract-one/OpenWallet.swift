@@ -19,7 +19,7 @@
 //
 
 import Foundation
-import EthereumTypes
+import Ethereum
 
 
 extension SignProviderError {
@@ -69,9 +69,18 @@ extension OpenWallet: SignProvider {
         tx: Transaction, networkId: UInt64, chainId: UInt64,
         response: @escaping OpenWallet.Response<Data>
     ) {
+        var request: EthereumSignTxKeychainRequest
+        do {
+            request = try EthereumSignTxKeychainRequest(
+                tx: tx, chainId: chainId, networkId: networkId
+            )
+        } catch let err {
+            response(.failure(SignProviderError(error: err as! OpenWalletError)))
+            return
+        }
         keychain(
             net: .Ethereum,
-            request: EthereumSignTxKeychainRequest(tx: tx, chainId: chainId, networkId: networkId)
+            request: request
         ) { result in
             response(result.mapError { SignProviderError(error: $0) })
         }

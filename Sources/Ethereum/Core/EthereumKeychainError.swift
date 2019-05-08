@@ -19,7 +19,7 @@
 //
 
 import Foundation
-import EthereumTypes
+import Ethereum
 
 
 public extension OpenWalletError._Type {

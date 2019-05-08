@@ -18,7 +18,7 @@
 //  limitations under the License.
 //
 
-import EthereumTypes
+import Ethereum
 
 
 public extension InstanceAPIRegistry {

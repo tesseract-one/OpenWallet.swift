@@ -1,8 +1,8 @@
 PODS:
   - BigInt (4.0.0)
   - CryptoSwift (1.0.0)
-  - Serializable.swift (0.1.1)
-  - Tesseract.EthereumTypes (0.1.5):
+  - Serializable.swift (0.1.2)
+  - Tesseract.EthereumTypes (0.1.6):
     - BigInt (~> 4.0)
     - CryptoSwift (~> 1.0)
     - Serializable.swift (~> 0.1)
@@ -21,8 +21,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   BigInt: 2aad1a9942dc932ec8b84290d2c564a3d76f97ab
   CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
-  Serializable.swift: 46a21fd252974669c1416edf741db56206fabd8b
-  Tesseract.EthereumTypes: 98d0a6341a36ff27874b3445a0ef8d9052f26724
+  Serializable.swift: 30c5cd7c995bc8140afbd0df09b8185d461aa61b
+  Tesseract.EthereumTypes: cef679ade2b8e866cdc6088bac09da870afd4359
 
 PODFILE CHECKSUM: 5d49c019bd5257bf7330c666e9dcffad01e6c3a6
 

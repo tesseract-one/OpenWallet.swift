@@ -22,7 +22,7 @@ import Foundation
 import Serializable
 import BigInt
 
-@_exported import EthereumTypes
+@_exported import Ethereum
 
 
 public protocol EthereumRequestMessageProtocol: KeychainRequestMessageProtocol {
@@ -75,38 +75,39 @@ public struct EthereumSignTxKeychainRequest: EthereumRequestMessageProtocol {
         self.networkId = networkId
     }
     
-    public init(tx: Transaction, chainId: UInt64, networkId: UInt64) {
+    public init(tx: Transaction, chainId: UInt64, networkId: UInt64) throws {
+        guard let nonce = tx.nonce else { throw OpenWalletError.wrongParameters("nonce") }
+        guard let gasPrice = tx.gasPrice else { throw OpenWalletError.wrongParameters("nonce") }
+        guard let gasLimit = tx.gas else { throw OpenWalletError.wrongParameters("gas") }
+        guard let from = tx.from else { throw OpenWalletError.wrongParameters("from") }
+        let value = tx.value ?? 0
         self.init(
-            nonce: "0x" + String(tx.nonce, radix: 16),
-            from: tx.from.hex(eip55: true),
+            nonce:  nonce.hex,
+            from: from.hex(eip55: true),
             to: tx.to?.hex(eip55: true),
-            gas: "0x" + String(tx.gas, radix: 16),
-            gasPrice: "0x" + String(tx.gasPrice, radix: 16),
-            value: "0x" + String(tx.value, radix: 16),
-            data: tx.data,
-            chainId: "0x" + String(BigUInt(chainId), radix: 16),
+            gas: gasLimit.hex,
+            gasPrice: gasPrice.hex,
+            value: value.hex,
+            data: tx.data.data,
+            chainId: Quantity(integerLiteral: chainId).hex,
             networkId: networkId
         )
     }
     
-    public var transaction: Transaction {
+    public func transaction() throws -> Transaction {
         return Transaction(
-            nonce: BigUInt(remove0x(nonce), radix: 16)!,
-            gasPrice: BigUInt(remove0x(gasPrice), radix: 16)!,
-            gas: BigUInt(remove0x(gas), radix: 16)!,
-            from: try! Address(hex: from),
-            to: to != nil ? try! Address(hex: to!) : nil,
-            value: BigUInt(remove0x(value), radix: 16)!,
-            data: data
+            nonce: try Quantity(hex: nonce),
+            gasPrice: try Quantity(hex: gasPrice),
+            gas: try Quantity(hex: gas),
+            from: try Address(hex: from),
+            to: to != nil ? try Address(hex: to!) : nil,
+            value: try Quantity(hex: value),
+            data: EthData(data)
         )
     }
     
-    public var chainIdInt: UInt64 {
-        return UInt64(BigUInt(remove0x(chainId), radix: 16)!)
-    }
-    
-    private func remove0x(_ str: String) -> String {
-        return String(str.suffix(from: str.index(str.startIndex, offsetBy: 2)))
+    public func chainIdInt() throws -> UInt64 {
+        return try UInt64(Quantity(hex: chainId).quantity)
     }
 }
 
