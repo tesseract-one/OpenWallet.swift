@@ -19,10 +19,13 @@
 //
 
 import UIKit
+#if !COCOAPODS
+    import OpenWalletCore
+#endif
 
 public class RequestActivityItemSource: NSObject, UIActivityItemSource {
-    let message: String?
-    let uti: String
+    public let message: String?
+    public let uti: String
     
     public init(message: String?, uti: String) {
         self.message = message

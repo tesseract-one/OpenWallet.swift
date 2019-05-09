@@ -21,8 +21,8 @@
 import Foundation
 
 public struct Network: Hashable, Equatable {
-    let id: UInt32
-    let uti: String
+    public let id: UInt32
+    public let uti: String
     
     public init(id: UInt32, uti: String) {
         self.id = id

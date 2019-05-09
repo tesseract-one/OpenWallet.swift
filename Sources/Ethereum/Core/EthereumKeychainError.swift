@@ -20,6 +20,9 @@
 
 import Foundation
 import Ethereum
+#if !COCOAPODS
+    import OpenWalletCore
+#endif
 
 
 public extension OpenWalletError._Type {

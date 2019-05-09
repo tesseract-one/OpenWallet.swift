@@ -20,6 +20,10 @@
 
 import XCTest
 @testable import OpenWallet
+#if !COCOAPODS
+    @testable import OpenWalletEthereum
+    @testable import OpenWalletWalletEthereum
+#endif
 
 class OpenWalletTests: XCTestCase {
 

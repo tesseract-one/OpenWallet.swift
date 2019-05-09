@@ -20,6 +20,9 @@
 
 import Foundation
 import Ethereum
+#if !COCOAPODS
+    @_exported import OpenWallet
+#endif
 
 
 extension SignProviderError {

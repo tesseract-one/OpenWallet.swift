@@ -30,11 +30,11 @@ public protocol RequestMessageProtocol: Codable {
 }
 
 
-public class Request<Request: RequestMessageProtocol>: SerializableProtocol {
+open class Request<Request: RequestMessageProtocol>: SerializableProtocol {
     public struct Data<R: Codable>: Codable {
-        let version: Version
-        let id: UInt32
-        let request: R
+        public let version: Version
+        public let id: UInt32
+        public let request: R
     }
     
     public let data: Data<Request>

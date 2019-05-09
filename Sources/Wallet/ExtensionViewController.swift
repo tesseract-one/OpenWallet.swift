@@ -19,6 +19,9 @@
 //
 
 import UIKit
+#if !COCOAPODS
+    @_exported import OpenWalletCore
+#endif
 
 public protocol RequestHandler {
     var supportedUTI: Array<String> { get }

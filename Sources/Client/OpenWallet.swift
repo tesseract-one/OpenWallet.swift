@@ -20,7 +20,9 @@
 
 import Foundation
 import UIKit
-
+#if !COCOAPODS
+    @_exported import OpenWalletCore
+#endif
 
 public class OpenWallet {
     private var requestCounter: UInt32

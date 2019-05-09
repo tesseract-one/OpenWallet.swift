@@ -20,7 +20,9 @@
 
 import UIKit
 import BigInt
-
+#if !COCOAPODS
+    @_exported import OpenWalletWallet
+#endif
 
 public protocol EthereumKeychainViewProvider {
     typealias ViewResponse<Req: RequestMessageProtocol> = (Swift.Result<Req.Response, OpenWalletError>) -> Void

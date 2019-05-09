@@ -1,0 +1,2 @@
+github "tesseract-one/EthereumTypes.swift" ~> 0.1
+github "tesseract-one/Serializable.swift" ~> 0.1

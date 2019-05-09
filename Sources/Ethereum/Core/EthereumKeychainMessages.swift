@@ -21,8 +21,13 @@
 import Foundation
 import Serializable
 import BigInt
+#if !COCOAPODS
+    import OpenWalletCore
+#endif
 
 @_exported import Ethereum
+
+
 
 
 public protocol EthereumRequestMessageProtocol: KeychainRequestMessageProtocol {

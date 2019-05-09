@@ -35,10 +35,10 @@ public protocol ResponseProtocol: SerializableProtocol {}
 
 public struct Response<Request: RequestMessageProtocol>: ResponseProtocol {
     public struct Data<R: Codable>: Codable {
-        let version: Version
-        let id: UInt32
-        let response: R?
-        let error: OpenWalletError?
+        public let version: Version
+        public let id: UInt32
+        public let response: R?
+        public let error: OpenWalletError?
     }
     
     public let data: Data<Request.Response>

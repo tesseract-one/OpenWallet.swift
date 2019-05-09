@@ -37,8 +37,8 @@ public struct OpenWalletError: Error, Codable {
         public static let unknownError = _Type(rawValue: "UNKNOWN_ERROR")
     }
     
-    let type: _Type
-    let message: String
+    public let type: _Type
+    public let message: String
     
     public init(type: _Type, message: String) {
         self.type = type

@@ -19,7 +19,9 @@
 //
 
 import Foundation
-
+#if !COCOAPODS
+    import OpenWalletCore
+#endif
 
 public class KeychainRequest<Message: KeychainRequestMessageProtocol>: Request<Message> {
     public init(network: Network, id: UInt32, request: Message) {
