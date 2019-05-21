@@ -12,7 +12,9 @@ import Foundation
 #endif
 
 public protocol ExtensionViewControllerURLChannelDelegate: class {
-    func extensionViewControllerFinished(vc: ExtensionViewController, channel: ExtensionViewControllerURLChannel, opened: Bool)
+    func extensionViewControllerFinished(
+        vc: ExtensionViewController, channel: ExtensionViewControllerURLChannel, opened: Bool
+    )
 }
 
 public struct ExtensionViewControllerURLChannel: ExtensionViewControllerDataChannel {
@@ -61,11 +63,6 @@ public struct ExtensionViewControllerURLChannel: ExtensionViewControllerDataChan
         // Can be force unwrapped. callback is url, and we are adding proper anchor (base64 is valid anchor symbols)
         let opened = vc.openURL(URL(string: cb)!)
         delegate?.extensionViewControllerFinished(vc: vc, channel: self, opened: opened)
-    }
-    
-    public func walletIsNotInitialized(viewController: ExtensionViewController) {
-        let res = Response<Empty>(uti: uti, error: .walletIsNotInitialized)
-        response(viewController: viewController, response: res)
     }
     
     public func response(viewController: ExtensionViewController, response: ResponseProtocol) {
