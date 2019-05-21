@@ -11,12 +11,17 @@ import Foundation
     @_exported import OpenWalletCore
 #endif
 
+public protocol ExtensionViewControllerURLChannelDelegate: class {
+    func extensionViewControllerFinished(vc: ExtensionViewController, channel: ExtensionViewControllerURLChannel, opened: Bool)
+}
 
 public struct ExtensionViewControllerURLChannel: ExtensionViewControllerDataChannel {
     
     public let uti: String
     public let messageBase64: String
     public let callback: URL
+    
+    public weak var delegate: ExtensionViewControllerURLChannelDelegate?
     
     public init(request: URL) throws {
         guard let components = URLComponents(url: request, resolvingAgainstBaseURL: true) else {
@@ -54,7 +59,8 @@ public struct ExtensionViewControllerURLChannel: ExtensionViewControllerDataChan
     private func sendResponse(vc: ExtensionViewController, data: Data) {
         let cb = self.callback.absoluteString + "#\(OPENWALLET_URL_API_PREFIX)-\(data.base64EncodedString())"
         // Can be force unwrapped. callback is url, and we are adding proper anchor (base64 is valid anchor symbols)
-        let _ = vc.openURL(URL(string: cb)!)
+        let opened = vc.openURL(URL(string: cb)!)
+        delegate?.extensionViewControllerFinished(vc: vc, channel: self, opened: opened)
     }
     
     public func response(viewController: ExtensionViewController, response: ResponseProtocol) {
