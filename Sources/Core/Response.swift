@@ -68,6 +68,11 @@ public struct Response<Request: RequestMessageProtocol>: ResponseProtocol {
         self.uti = uti
     }
     
+    public init(uti: String, error: OpenWalletError) {
+        self.data = Data(version: .v1, id: 0, response: nil, error: error)
+        self.uti = uti
+    }
+    
     public func serialize() throws -> String {
         let bytes = try JSONEncoder().encode(data)
         return String(data: bytes, encoding: .utf8)!

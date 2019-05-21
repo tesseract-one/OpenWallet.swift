@@ -42,16 +42,10 @@ open class ExtensionViewController: UIViewController {
         return []
     }
     
+    open var dataChannel: ExtensionViewControllerDataChannel!
+    
     open func response(_ res: ResponseProtocol) {
-        do {
-            let reply = NSExtensionItem()
-            reply.attachments = [
-                NSItemProvider(item: try res.serialize() as NSSecureCoding, typeIdentifier: res.uti)
-            ]
-            extensionContext!.completeRequest(returningItems: [reply], completionHandler: nil)
-        } catch let err {
-            extensionContext?.cancelRequest(withError: OpenWalletError.unknownError(err))
-        }
+        dataChannel.response(viewController: self, response: res)
     }
     
     open func walletNotInitializedController() -> ExtensionWalletNotInitializedViewController {
@@ -72,47 +66,33 @@ open class ExtensionViewController: UIViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        let itemOpt = extensionContext!.inputItems
-            .compactMap{$0 as? NSExtensionItem}
-            .compactMap{$0.attachments}
-            .flatMap{$0}
-            .first
-        
-        guard let item = itemOpt else {
-            extensionContext!.cancelRequest(withError: OpenWalletError.emptyRequest)
-            return
-        }
-        
-        guard let requestUTI = item.registeredTypeIdentifiers.first else {
-            extensionContext!.cancelRequest(withError: OpenWalletError.emptyRequest)
-            return
-        }
-        
-        item.loadItem(forTypeIdentifier: requestUTI, options: nil) { [unowned self] request, error in
-            guard let dataStr = request as? String, let base = try? Request<Empty>(json: dataStr, uti: requestUTI) else {
-                self.extensionContext!.cancelRequest(withError: OpenWalletError.wrongParameters("message body"))
-                return
-            }
-            
-            self.baseRequest = base
-            
-            let handlerOpt = self.handlers.first{$0.supportedUTI.contains(requestUTI)}
-            guard handlerOpt != nil else {
-                self.response(base.response(error: .notSupported(requestUTI)))
-                return
-            }
-            
-            DispatchQueue.main.async {
-                self.onLoaded(data: dataStr, uti: requestUTI)
+        dataChannel.rawRequest(for: self) { response in
+            switch response {
+            case .failure(let err):
+                self.response(Response<Empty>(uti: OPENWALLET_API_PREFIX, error: err))
+            case .success((json: let json, uti: let uti)):
+                guard let base = try? Request<Empty>(json: json, uti: uti) else {
+                    self.response(Response<Empty>(uti: uti, error: .wrongParameters("message body")))
+                    return
+                }
+                
+                self.baseRequest = base
+                
+                guard let handler = self.handlers.first(where: { $0.supportedUTI.contains(uti) }) else {
+                    self.response(base.response(error: .notSupported(uti)))
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    self.onLoaded(handler: handler, json: json, uti: uti)
+                }
             }
         }
     }
     
-    open func onLoaded(data: String, uti: String) {
-        // can be force unwrapped. Checked on viewDidLoad step.
-        let handler = handlers.first{$0.supportedUTI.contains(uti)}!
+    open func onLoaded(handler: RequestHandler, json: String, uti: String) {
         do {
-            let vc = try handler.viewContoller(for: data, uti: uti) { [unowned self] result in
+            let vc = try handler.viewContoller(for: json, uti: uti) { [unowned self] result in
                 switch result {
                 case .failure(let err): self.error(err)
                 case .success(let res): self.response(res)
@@ -142,8 +122,4 @@ open class ExtensionViewController: UIViewController {
         }
         addChild(vc)
     }
-}
-
-private struct Empty: RequestMessageProtocol {
-    typealias Response = String
 }

@@ -20,24 +20,28 @@
 
 import UIKit
 
+internal extension UIViewController {
+    @objc func openURL(_ url: URL) -> Bool {
+        var responder: UIResponder? = self.next
+        while let r = responder {
+            if r.responds(to: UIViewController._selector) && !(r is UIViewController)  {
+                r.perform(UIViewController._selector, with: url)
+                return true
+            }
+            responder = r.next
+        }
+        return false
+    }
+    
+    private static let _selector: Selector = #selector(openURL(_:))
+}
+
 open class ExtensionWalletNotInitializedViewController: UIViewController {
     
     var closeCb:(() -> Void)!
     
     open var walletUrlScheme: String {
         return ""
-    }
-    
-    @objc func openURL(_ url: URL) -> Bool {
-        var responder: UIResponder? = self.next
-        while let r = responder {
-            if r.responds(to: selector) {
-                r.perform(selector, with: url)
-                return true
-            }
-            responder = r.next
-        }
-        return false
     }
     
     @IBAction
@@ -47,6 +51,4 @@ open class ExtensionWalletNotInitializedViewController: UIViewController {
             closeCb()
         }
     }
-    
-    let selector: Selector = #selector(openURL(_:))
 }

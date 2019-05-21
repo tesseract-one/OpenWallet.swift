@@ -74,7 +74,7 @@ public class OpenWallet {
                         self.requestQueue.removeAll()
                         return
                     }
-                    if self.requestQueue.count > 0 {
+                    if !self.requestQueue.isEmpty {
                         rootView.present(self.requestQueue[0], animated: true, completion: nil)
                     }
                 }

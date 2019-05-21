@@ -51,6 +51,9 @@
 		92C64C56228498ED00F547C3 /* OpenWalletCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C64C2B2284963200F547C3 /* OpenWalletCore.framework */; };
 		92C64C5B22849AD800F547C3 /* OpenWalletCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C64C2B2284963200F547C3 /* OpenWalletCore.framework */; };
 		92C64C5C22849AD800F547C3 /* OpenWalletWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C64C442284976700F547C3 /* OpenWalletWallet.framework */; };
+		92D4C4DB2294418A00AA4199 /* ExtensionViewControllerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D4C4DA2294418A00AA4199 /* ExtensionViewControllerProtocols.swift */; };
+		92D4C4DD2294444B00AA4199 /* ExtensionViewControllerShareChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D4C4DC2294444B00AA4199 /* ExtensionViewControllerShareChannel.swift */; };
+		92D4C4DF2294446400AA4199 /* ExtensionViewControllerURLChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D4C4DE2294446400AA4199 /* ExtensionViewControllerURLChannel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +185,9 @@
 		92C64C132284946800F547C3 /* BigInt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BigInt.framework; sourceTree = "<group>"; };
 		92C64C2B2284963200F547C3 /* OpenWalletCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenWalletCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C64C442284976700F547C3 /* OpenWalletWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenWalletWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92D4C4DA2294418A00AA4199 /* ExtensionViewControllerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewControllerProtocols.swift; sourceTree = "<group>"; };
+		92D4C4DC2294444B00AA4199 /* ExtensionViewControllerShareChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewControllerShareChannel.swift; sourceTree = "<group>"; };
+		92D4C4DE2294446400AA4199 /* ExtensionViewControllerURLChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewControllerURLChannel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +336,9 @@
 			children = (
 				927C5A5E224D4A8D00F2AA50 /* ExtensionViewController.swift */,
 				926C55522253CFBE00D14851 /* ExtensionWalletNotInitializedViewController.swift */,
+				92D4C4DA2294418A00AA4199 /* ExtensionViewControllerProtocols.swift */,
+				92D4C4DC2294444B00AA4199 /* ExtensionViewControllerShareChannel.swift */,
+				92D4C4DE2294446400AA4199 /* ExtensionViewControllerURLChannel.swift */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -708,8 +717,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D4C4DD2294444B00AA4199 /* ExtensionViewControllerShareChannel.swift in Sources */,
 				92C64C4D228497F300F547C3 /* ExtensionWalletNotInitializedViewController.swift in Sources */,
+				92D4C4DF2294446400AA4199 /* ExtensionViewControllerURLChannel.swift in Sources */,
 				92C64C4C228497F300F547C3 /* ExtensionViewController.swift in Sources */,
+				92D4C4DB2294418A00AA4199 /* ExtensionViewControllerProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
