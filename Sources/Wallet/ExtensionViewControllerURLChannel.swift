@@ -63,6 +63,11 @@ public struct ExtensionViewControllerURLChannel: ExtensionViewControllerDataChan
         delegate?.extensionViewControllerFinished(vc: vc, channel: self, opened: opened)
     }
     
+    public func walletIsNotInitialized(viewController: ExtensionViewController) {
+        let res = Response<Empty>(uti: uti, error: .walletIsNotInitialized)
+        response(viewController: viewController, response: res)
+    }
+    
     public func response(viewController: ExtensionViewController, response: ResponseProtocol) {
         do {
             let string = try response.serialize()
