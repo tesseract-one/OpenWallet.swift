@@ -42,10 +42,10 @@ open class ExtensionViewController: UIViewController {
         return []
     }
     
-    open var dataChannel: ExtensionViewControllerDataChannel!
+    open var dataChannel: ExtensionViewControllerDataChannel? = nil
     
     open func response(_ res: ResponseProtocol) {
-        dataChannel.response(viewController: self, response: res)
+        dataChannel!.response(viewController: self, response: res)
     }
     
     open func walletNotInitializedController() -> ExtensionWalletNotInitializedViewController {
@@ -66,7 +66,11 @@ open class ExtensionViewController: UIViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataChannel.rawRequest(for: self) { response in
+        if let _ = extensionContext, dataChannel == nil {
+            dataChannel = ExtensionViewContollerShareChannel()
+        }
+        
+        dataChannel!.rawRequest(for: self) { response in
             switch response {
             case .failure(let err):
                 self.response(Response<Empty>(uti: OPENWALLET_API_PREFIX, error: err))
