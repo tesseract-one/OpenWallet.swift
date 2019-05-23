@@ -12,9 +12,8 @@ import Foundation
 #endif
 
 public protocol ExtensionViewControllerURLChannelDelegate: class {
-    func extensionViewControllerFinished(
-        vc: ExtensionViewController, channel: ExtensionViewControllerURLChannel, opened: Bool
-    )
+    
+    func urlChannelGotResponse(channel: ExtensionViewControllerURLChannel, for vc: ExtensionViewController, response: Data)
 }
 
 public struct ExtensionViewControllerURLChannel: ExtensionViewControllerDataChannel {
@@ -58,11 +57,18 @@ public struct ExtensionViewControllerURLChannel: ExtensionViewControllerDataChan
         self.uti = "\(OPENWALLET_API_PREFIX).\(api)"
     }
     
-    private func sendResponse(vc: ExtensionViewController, data: Data) {
+    public func sendResponse(vc: ExtensionViewController, data: Data) -> Bool {
         let cb = self.callback.absoluteString + "#\(OPENWALLET_URL_API_PREFIX)-\(data.base64EncodedString())"
         // Can be force unwrapped. callback is url, and we are adding proper anchor (base64 is valid anchor symbols)
-        let opened = vc.openURL(URL(string: cb)!)
-        delegate?.extensionViewControllerFinished(vc: vc, channel: self, opened: opened)
+        return vc.openURL(URL(string: cb)!)
+    }
+    
+    private func handleResponse(vc: ExtensionViewController, data: Data) {
+        if let delegate = delegate {
+            delegate.urlChannelGotResponse(channel: self, for: vc, response: data)
+        } else {
+            let _ = sendResponse(vc: vc, data: data)
+        }
     }
     
     public func response(viewController: ExtensionViewController, response: ResponseProtocol) {
@@ -71,7 +77,7 @@ public struct ExtensionViewControllerURLChannel: ExtensionViewControllerDataChan
             guard let data = string.data(using: .utf8) else {
                 throw OpenWalletError.wrongParameters("can't encode utf8")
             }
-            sendResponse(vc: viewController, data: data)
+            handleResponse(vc: viewController, data: data)
         } catch let err {
             let errorResponse: Response<Empty>
             switch err {
@@ -82,7 +88,7 @@ public struct ExtensionViewControllerURLChannel: ExtensionViewControllerDataChan
             }
             
             // Error response always can be converted to data
-            sendResponse(
+            handleResponse(
                 vc: viewController,
                 data: try! errorResponse.serialize().data(using: .utf8)!
             )
