@@ -28,7 +28,7 @@ public protocol ExtensionViewControllerURLChannelDelegate: class {
     func urlChannelGotResponse(channel: ExtensionViewControllerURLChannel, response: Data)
 }
 
-public struct ExtensionViewControllerURLChannel: ExtensionViewControllerDataChannel {
+public class ExtensionViewControllerURLChannel: ExtensionViewControllerDataChannel {
     
     public let uti: String
     public let messageBase64: String
