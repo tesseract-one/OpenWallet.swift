@@ -85,22 +85,21 @@ public struct EthereumSignTxKeychainRequest: EthereumRequestMessageProtocol {
         guard let gasPrice = tx.gasPrice else { throw OpenWalletError.wrongParameters("nonce") }
         guard let gasLimit = tx.gas else { throw OpenWalletError.wrongParameters("gas") }
         guard let from = tx.from else { throw OpenWalletError.wrongParameters("from") }
-        let value = tx.value ?? 0
         self.init(
             nonce:  nonce.hex,
             from: from.hex(eip55: true),
             to: tx.to?.hex(eip55: true),
             gas: gasLimit.hex,
             gasPrice: gasPrice.hex,
-            value: value.hex,
-            data: tx.data.data,
+            value: tx.value.hex,
+            data: tx.data?.data ?? Data(),
             chainId: Quantity(integerLiteral: chainId).hex,
             networkId: networkId
         )
     }
     
     public func transaction() throws -> Transaction {
-        return Transaction(
+        return try Transaction(
             nonce: try Quantity(hex: nonce),
             gasPrice: try Quantity(hex: gasPrice),
             gas: try Quantity(hex: gas),
