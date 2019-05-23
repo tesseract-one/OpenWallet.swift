@@ -31,7 +31,7 @@ open class ExtensionWalletNotInitializedViewController: UIViewController {
     @IBAction
     open func openWallet() {
         let url = URL(string: walletUrlScheme)!
-        if openURL(url) {
+        if open(url: url) {
             closeCb()
         }
     }
