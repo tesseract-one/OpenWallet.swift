@@ -1,9 +1,21 @@
 //
 //  ExtensionViewControllerURLChannel.swift
-//  OpenWalletWallet-iOS
+//  OpenWallet
 //
 //  Created by Yehor Popovych on 5/21/19.
 //  Copyright © 2019 Tesseract Systems, Inc. All rights reserved.
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//  http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
 //
 
 import Foundation
@@ -13,7 +25,7 @@ import Foundation
 
 public protocol ExtensionViewControllerURLChannelDelegate: class {
     
-    func urlChannelGotResponse(channel: ExtensionViewControllerURLChannel, for vc: ExtensionViewController, response: Data)
+    func urlChannelGotResponse(channel: ExtensionViewControllerURLChannel, response: Data)
 }
 
 public struct ExtensionViewControllerURLChannel: ExtensionViewControllerDataChannel {
@@ -57,17 +69,17 @@ public struct ExtensionViewControllerURLChannel: ExtensionViewControllerDataChan
         self.uti = "\(OPENWALLET_API_PREFIX).\(api)"
     }
     
-    public func sendResponse(vc: ExtensionViewController, data: Data) -> Bool {
+    public func sendResponse(provider: OpenURLProviderProtocol, data: Data) -> Bool {
         let cb = self.callback.absoluteString + "#\(OPENWALLET_URL_API_PREFIX)-\(data.base64EncodedString())"
         // Can be force unwrapped. callback is url, and we are adding proper anchor (base64 is valid anchor symbols)
-        return vc.openURL(URL(string: cb)!)
+        return provider.open(url: URL(string: cb)!)
     }
     
     private func handleResponse(vc: ExtensionViewController, data: Data) {
         if let delegate = delegate {
-            delegate.urlChannelGotResponse(channel: self, for: vc, response: data)
+            delegate.urlChannelGotResponse(channel: self, response: data)
         } else {
-            let _ = sendResponse(vc: vc, data: data)
+            let _ = sendResponse(provider: vc, data: data)
         }
     }
     

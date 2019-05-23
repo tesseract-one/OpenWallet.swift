@@ -12,6 +12,7 @@
 		927C5A60224D4A8D00F2AA50 /* OpenWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5A5C224D4A8D00F2AA50 /* OpenWallet.swift */; };
 		927C5A6F224D4D2C00F2AA50 /* Request+Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5A6E224D4D2C00F2AA50 /* Request+Client.swift */; };
 		927C5ACA224E94AB00F2AA50 /* OpenWallet+KeychainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5AC9224E94AB00F2AA50 /* OpenWallet+KeychainAPI.swift */; };
+		927DB8132297014B0063B10D /* UIViewController+OpenURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927DB8122297014B0063B10D /* UIViewController+OpenURL.swift */; };
 		92C64BFF2284912200F547C3 /* EthereumNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5A7E224D651F00F2AA50 /* EthereumNetwork.swift */; };
 		92C64C002284912200F547C3 /* EthereumKeychainMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5A6C224D4CCE00F2AA50 /* EthereumKeychainMessages.swift */; };
 		92C64C012284912200F547C3 /* EthereumKeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927C5A7C224D625C00F2AA50 /* EthereumKeychainError.swift */; };
@@ -177,6 +178,7 @@
 		927C5A7E224D651F00F2AA50 /* EthereumNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumNetwork.swift; sourceTree = "<group>"; };
 		927C5A85224D817200F2AA50 /* Tesseract.OpenWallet.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tesseract.OpenWallet.podspec; sourceTree = "<group>"; };
 		927C5AC9224E94AB00F2AA50 /* OpenWallet+KeychainAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OpenWallet+KeychainAPI.swift"; sourceTree = "<group>"; };
+		927DB8122297014B0063B10D /* UIViewController+OpenURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+OpenURL.swift"; sourceTree = "<group>"; };
 		92C64BE822848E8B00F547C3 /* OpenWalletWalletEthereum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenWalletWalletEthereum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C64BF52284904300F547C3 /* OpenWalletEthereum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenWalletEthereum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C64C102284946800F547C3 /* Ethereum.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Ethereum.framework; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				92D4C4DA2294418A00AA4199 /* ExtensionViewControllerProtocols.swift */,
 				92D4C4DC2294444B00AA4199 /* ExtensionViewControllerShareChannel.swift */,
 				92D4C4DE2294446400AA4199 /* ExtensionViewControllerURLChannel.swift */,
+				927DB8122297014B0063B10D /* UIViewController+OpenURL.swift */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -721,6 +724,7 @@
 				92C64C4D228497F300F547C3 /* ExtensionWalletNotInitializedViewController.swift in Sources */,
 				92D4C4DF2294446400AA4199 /* ExtensionViewControllerURLChannel.swift in Sources */,
 				92C64C4C228497F300F547C3 /* ExtensionViewController.swift in Sources */,
+				927DB8132297014B0063B10D /* UIViewController+OpenURL.swift in Sources */,
 				92D4C4DB2294418A00AA4199 /* ExtensionViewControllerProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
