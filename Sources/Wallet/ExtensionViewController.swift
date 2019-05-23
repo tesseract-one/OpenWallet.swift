@@ -35,36 +35,19 @@ public protocol RequestHandler {
 }
 
 open class ExtensionViewController: UIViewController {
+   
+    // Should be initialized in initialize method
+    open var handlers: Array<RequestHandler>!
+    open var dataChannel: ExtensionViewControllerDataChannel!
+    
     // parsed request header info
     private var baseRequest: Request<Empty>!
     
-    open var handlers: Array<RequestHandler> {
-        return []
-    }
-    
-    open var dataChannel: ExtensionViewControllerDataChannel!
-    
-    open func response(_ res: ResponseProtocol) {
-        dataChannel.response(viewController: self, response: res)
-    }
-    
-    open func walletNotInitializedController() -> ExtensionWalletNotInitializedViewController {
-        return ExtensionWalletNotInitializedViewController(nibName: nil, bundle: nil)
-    }
-    
-    open func walletIsNotInitialized() {
-        let vc = walletNotInitializedController()
-        vc.closeCb = { [weak self] in
-            if let sself = self {
-                sself.response(sself.baseRequest.response(error: .walletIsNotInitialized))
-            }
-            
-        }
-        showViewController(vc: vc)
-    }
+    open func initialize() {}
     
     open override func viewDidLoad() {
         super.viewDidLoad()
+        initialize()
         
         dataChannel.rawRequest(for: self) { response in
             switch response {
@@ -102,6 +85,25 @@ open class ExtensionViewController: UIViewController {
         } catch(let err) {
             error(.unknownError(err))
         }
+    }
+    
+    open func walletNotInitializedController() -> ExtensionWalletNotInitializedViewController {
+        return ExtensionWalletNotInitializedViewController(nibName: nil, bundle: nil)
+    }
+    
+    open func walletIsNotInitialized() {
+        let vc = walletNotInitializedController()
+        vc.closeCb = { [weak self] in
+            if let sself = self {
+                sself.response(sself.baseRequest.response(error: .walletIsNotInitialized))
+            }
+            
+        }
+        showViewController(vc: vc)
+    }
+    
+    open func response(_ res: ResponseProtocol) {
+        dataChannel.response(viewController: self, response: res)
     }
     
     open func error(_ error: OpenWalletError) {

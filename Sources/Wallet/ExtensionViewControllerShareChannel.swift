@@ -26,6 +26,8 @@ import Foundation
 
 public struct ExtensionViewContollerShareChannel: ExtensionViewControllerDataChannel {
     
+    public init() {}
+    
     public func response(viewController: ExtensionViewController, response: ResponseProtocol) {
         do {
             let reply = NSExtensionItem()
