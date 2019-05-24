@@ -70,8 +70,11 @@ public class ExtensionViewControllerURLChannel: ExtensionViewControllerDataChann
     }
     
     public func sendResponse(provider: OpenURLProviderProtocol, data: Data) -> Bool {
-        let cb = self.callback.absoluteString + "#\(OPENWALLET_URL_API_PREFIX)-\(data.base64EncodedString())"
-        // Can be force unwrapped. callback is url, and we are adding proper anchor (base64 is valid anchor symbols)
+        let escaped = data
+            .base64EncodedString()
+            .addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!
+        let cb = self.callback.absoluteString + "#\(OPENWALLET_URL_API_PREFIX)-\(escaped)"
+        // Can be force unwrapped. callback is url, and we are adding proper anchor (urlencoded base64 is valid anchor symbols)
         return provider.open(url: URL(string: cb)!)
     }
     
