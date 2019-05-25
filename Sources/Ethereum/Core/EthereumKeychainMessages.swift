@@ -28,8 +28,6 @@ import BigInt
 @_exported import Ethereum
 
 
-
-
 public protocol EthereumRequestMessageProtocol: KeychainRequestMessageProtocol {
     var networkId: UInt64 { get }
 }

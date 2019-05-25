@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Tesseract.OpenWallet'
-  s.version          = '0.1.5'
+  s.version          = '0.1.6'
   s.summary          = 'Tesseract Open Wallet Protocol implementation for Swift'
 
   s.description      = <<-DESC
@@ -15,6 +15,8 @@ Tesseract Plaftorm Open Wallet Protocol implementation for Swift
   s.social_media_url = 'https://twitter.com/tesseract_one'
 
   s.ios.deployment_target = '10.0'
+
+  s.swift_versions = ['5.0']
 
   s.module_name = 'OpenWallet'
 
