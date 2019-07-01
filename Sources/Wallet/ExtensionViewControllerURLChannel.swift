@@ -64,16 +64,30 @@ public class ExtensionViewControllerURLChannel: ExtensionViewControllerDataChann
             .replacingOccurrences(of: "\(OPENWALLET_URL_API_PREFIX)-", with: "")
             .replacingOccurrences(of: "-", with: ".")
         
-        self.messageBase64 = message
+        // base64url encoding with sttripped padding https://tools.ietf.org/html/rfc4648#page-7
+        var messageBase64 = message
+            .replacingOccurrences(of: "-", with: "+")
+            .replacingOccurrences(of: "_", with: "/")
+        
+        if message.count % 4 > 0 {
+            messageBase64 = messageBase64
+                .appending(String(repeating: "=", count: (4 - message.count % 4)))
+        }
+        
+        self.messageBase64 = messageBase64
         self.callback = callback
         self.uti = "\(OPENWALLET_API_PREFIX).\(api)"
     }
     
     public func sendResponse(provider: OpenURLProviderProtocol, data: Data) -> Bool {
-        let escaped = data
+        // base64url encoding with sttripped padding https://tools.ietf.org/html/rfc4648#page-7
+        let base64 = data
             .base64EncodedString()
-            .addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!
-        let cb = self.callback.absoluteString + "#\(OPENWALLET_URL_API_PREFIX)-\(escaped)"
+            .replacingOccurrences(of: "+", with: "-")
+            .replacingOccurrences(of: "/", with: "_")
+            .trimmingCharacters(in: CharacterSet(charactersIn: "="))
+        
+        let cb = self.callback.absoluteString + "#\(OPENWALLET_URL_API_PREFIX)-\(base64)"
         // Can be force unwrapped. callback is url, and we are adding proper anchor (urlencoded base64 is valid anchor symbols)
         return provider.open(url: URL(string: cb)!)
     }
