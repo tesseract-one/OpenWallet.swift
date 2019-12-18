@@ -33,10 +33,21 @@ public class ExtensionViewControllerURLChannel: ExtensionViewControllerDataChann
     public let uti: String
     public let messageBase64: String
     public let callback: URL
+    public let callbackAppId: String?
     
     public weak var delegate: ExtensionViewControllerURLChannelDelegate?
     
-    public init(request: URL) throws {
+    /**
+     Allows to use different browsers on iOS.
+     Config should be like this:
+        ["com.google.chrome.ios": ["googlechrome", "googlechromes"],
+        "org.mozilla.ios.firefox": ["firefox://open-url?url=%@"]]
+     AppId should be passed to the constructor.
+     Will open callback in a proper browser (by custom url scheme)
+    */
+    public static var browsers: Dictionary<String, Array<String>> = [:]
+    
+    public init(request: URL, appId: String? = nil) throws {
         guard let components = URLComponents(url: request, resolvingAgainstBaseURL: true) else {
             throw OpenWalletError.wrongParameters("can't parse URL options")
         }
@@ -77,6 +88,7 @@ public class ExtensionViewControllerURLChannel: ExtensionViewControllerDataChann
         self.messageBase64 = messageBase64
         self.callback = callback
         self.uti = "\(OPENWALLET_API_PREFIX).\(api)"
+        self.callbackAppId = appId?.lowercased()
     }
     
     public func sendResponse(provider: OpenURLProviderProtocol, data: Data) -> Bool {
@@ -87,9 +99,39 @@ public class ExtensionViewControllerURLChannel: ExtensionViewControllerDataChann
             .replacingOccurrences(of: "/", with: "_")
             .trimmingCharacters(in: CharacterSet(charactersIn: "="))
         
-        let cb = self.callback.absoluteString + "#\(OPENWALLET_URL_API_PREFIX)-\(base64)"
-        // Can be force unwrapped. callback is url, and we are adding proper anchor (urlencoded base64 is valid anchor symbols)
-        return provider.open(url: URL(string: cb)!)
+        
+        guard var components = URLComponents(url: callback, resolvingAgainstBaseURL: true) else {
+            return false
+        }
+        
+        components.fragment = "\(OPENWALLET_URL_API_PREFIX)-\(base64)"
+        
+        var url: URL
+        
+        if let appId = self.callbackAppId, let schemes = type(of: self).browsers[appId] {
+            let appScheme = schemes.count > 1
+                ? components.scheme == "https" ? schemes[1] : schemes[0]
+                : schemes[0]
+            if appScheme.range(of: "%@") == nil {
+                components.scheme = appScheme
+                guard let newUrl = components.url else {
+                    return false
+                }
+                url = newUrl
+            } else {
+                guard let escapedCb = components.url?.absoluteString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+                    return false
+                }
+                guard let newUrl = URL(string: String(format: appScheme, escapedCb)) else {
+                    return false
+                }
+                url = newUrl
+            }
+        } else {
+            // Can be force unwrapped. callback is url, and we are adding proper anchor (urlencoded base64 is valid anchor symbols)
+            url = components.url!
+        }
+        return provider.open(url: url)
     }
     
     private func handleResponse(vc: ExtensionViewController, data: Data) {
